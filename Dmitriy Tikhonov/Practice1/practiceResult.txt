@@ -1,4 +1,4 @@
-TestRail - http://89.223.126.182/testrail/index.php?/runs/view/22&group_by=cases:section_id&group_order=asc&group_id=25
+testRail - http://89.223.126.182/testrail/index.php?/runs/view/22&group_by=cases:section_id&group_order=asc&group_id=25
 
 JIRA:
 Добавлены задачи HAR - 12-18 в Dashboard Team-4
