@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "13f4a126-c6ac-4e70-813a-a4578943d738",
+		"name": "Team-4_Tikhonov",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Jira",
+			"item": [
+				{
+					"name": "Запрос информации о проектах",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "db8635b8-0a36-4718-ac35-ab106e15e0d2",
+								"exec": [
+									"let jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"if (responseCode.code === 200) {\r",
+									"let idJSON = jsonData.projects[2].issuetypes[0].id;\r",
+									"let keyJSON = jsonData.projects[2].key;\r",
+									"console.log(\"Получили ID - \" + idJSON + \". Получили Key - \" + keyJSON);\r",
+									"\r",
+									"pm.environment.get('ID'); pm.environment.set(('ID'), idJSON);\r",
+									"pm.environment.get('KEY'); pm.environment.set(('KEY'), keyJSON);\r",
+									"\r",
+									"\ttests[\"Успешно: Переменные записаны\"] = true;\r",
+									"} else if (responseCode.code !== 200) {\r",
+									"    tests[\"Не успешно: Проверьте передаваемые параметры!!! \" + jsonData.errorMessages] = false;\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e011d3f1-dc49-43a9-b8bd-bcadd7b3760c",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{task_2_jira_url}}issue/createmeta",
+							"host": [
+								"{{task_2_jira_url}}issue"
+							],
+							"path": [
+								"createmeta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создать задачу",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0c9edc06-9f74-4f94-a7a8-433495a923a1",
+								"exec": [
+									"let parseRequestBody = (JSON.parse(pm.request.body.raw))\r",
+									"pm.environment.get('summary'); pm.environment.set(('summary'), parseRequestBody.fields.summary);\r",
+									"pm.environment.get('description'); pm.environment.set(('description'), parseRequestBody.fields.description);\r",
+									"\r",
+									"let jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"if (responseCode.code === 201) {\r",
+									"pm.environment.get('urlCreateTask'); pm.environment.set(('urlCreateTask'), jsonData.self);\r",
+									"pm.environment.get('idCreateTask'); pm.environment.set(('idCreateTask'), jsonData.id);\r",
+									"\r",
+									"\ttests[\"Успешно: \" + \"Создана задача - \" + parseRequestBody.fields.summary] = true;\r",
+									"} else if (responseCode.code !== 200) {\r",
+									"    tests[\"Не успешно: Проверьте передаваемые параметры!!! \" + jsonData.errorMessages] = false;\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d74fafcf-9397-4502-b24b-5a0ef1673be1",
+								"exec": [
+									"let json = {\r",
+									"\t\"fields\": {\r",
+									"\t\t\"project\": {\r",
+									"\t\t\t\"key\": pm.environment.get('KEY')\r",
+									"\t\t},\r",
+									"\t\t\"summary\": \"New problem from \" + \"{{$isoTimestamp}}\" + \" . To change - \" + \"{{$randomPhrase}}\" + \". Author - Tikhonov Dmitriy\",\r",
+									"\t\t\"description\": \"Problem ID: \" +  \"{{$guid}}\",\r",
+									"\t\t\"issuetype\": {\r",
+									"\t\t\t\"id\": pm.environment.get('ID')\r",
+									"\t\t}\r",
+									"\t}\r",
+									"}\r",
+									"\r",
+									"pm.variables.set(\"json\", JSON.stringify(json));\r",
+									"\r",
+									"const utils = eval(globals.loadUtils);\r",
+									"utils.utilsBody();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{{content_body}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{task_2_jira_url}}issue",
+							"host": [
+								"{{task_2_jira_url}}issue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение issue",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7b96effe-dad3-4ba9-8633-32ea4788803b",
+								"exec": [
+									"let jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"if (pm.expect(jsonData.fields.summary).to.eql(pm.environment.get(\"summary\")) && pm.expect(jsonData.fields.description).to.eql(pm.environment.get(\"description\"))) {\r",
+									"    tests[\"Успешно: summary и description совпадают. \" + \"Текущий статус задачи - \" + jsonData.fields.status.statusCategory.name] = true;\r",
+									"} else if (responseCode.code !== 200) {\r",
+									"    tests[\"Не успешно: Проверьте передаваемые параметры!!! \" + jsonData.errorMessages] = false;\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlCreateTask}}",
+							"host": [
+								"{{urlCreateTask}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение статусов задачи",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "86862640-a2d2-42b7-b64c-619a591fd939",
+								"exec": [
+									"let jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"if (jsonData.transitions[1].name == \"В работе\" && responseCode.code === 200) {\r",
+									"pm.environment.get('idChangeTask'); pm.environment.set(('idChangeTask'), jsonData.transitions[1].id);\r",
+									"\r",
+									"\ttests[\"Успешно: \" + \"ID для перевода задачи в статус \\\"В работе\\\" - \" + jsonData.transitions[1].id] = true;\r",
+									"} else if (jsonData.transitions[1].name !== \"В работе\" && responseCode.code === 200) {\r",
+									"    tests[\"Не успешно: Проверьте передаваемые параметры!!!\"] = false;\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{task_2_jira_url}}issue/{{idCreateTask}}/transitions",
+							"host": [
+								"{{task_2_jira_url}}issue"
+							],
+							"path": [
+								"{{idCreateTask}}",
+								"transitions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Изменение статуса задачи",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "98bd780c-17ee-4920-a670-d84503d6399a",
+								"exec": [
+									"let json = {\r",
+									"\t\"transition\": {\r",
+									"      \"id\": pm.environment.get('idChangeTask')\r",
+									"    }\r",
+									"}\r",
+									"\r",
+									"pm.variables.set(\"json\", JSON.stringify(json));\r",
+									"\r",
+									"const utils = eval(globals.loadUtils);\r",
+									"utils.utilsBody();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "daad8004-cc7b-432f-a67e-4522925d0279",
+								"exec": [
+									"if (responseCode.code === 204) {\r",
+									"\ttests[\"Успешно: Для задачи \" + pm.environment.get('idCreateTask') + \" установлен статус \\\"В работе\\\"\"] = true;\r",
+									"} else if (responseCode.code !== 204) {\r",
+									"    tests[\"Не успешно: Проверьте передаваемые параметры!!!\"] = false;\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{{content_body}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{task_2_jira_url}}issue/{{idCreateTask}}/transitions",
+							"host": [
+								"{{task_2_jira_url}}issue"
+							],
+							"path": [
+								"{{idCreateTask}}",
+								"transitions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение issue (проверка статуса)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "41cf9884-5195-446e-a901-7265986abc3a",
+								"exec": [
+									"let jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"if (pm.expect(jsonData.fields.summary).to.eql(pm.environment.get(\"summary\")) && pm.expect(jsonData.fields.description).to.eql(pm.environment.get(\"description\"))) {\r",
+									"    tests[\"Успешно: summary и description совпадают. \" + \"Текущий статус задачи - \" + jsonData.fields.status.statusCategory.name] = true;\r",
+									"} else if (responseCode.code !== 200) {\r",
+									"    tests[\"Не успешно: Проверьте передаваемые параметры!!! \" + jsonData.errorMessages] = false;\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlCreateTask}}",
+							"host": [
+								"{{urlCreateTask}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "123456",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "team4",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "efa44173-7796-47bf-a593-be976993e7eb",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8d005656-b60c-46be-989e-da4134334572",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "task_1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b8aa3ee5-1791-454b-9562-0061fc0e75aa",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{task_1_url}}posts/1/comments",
+					"host": [
+						"{{task_1_url}}posts"
+					],
+					"path": [
+						"1",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "30026a79-5270-41cd-8f8c-a12c5e5f1092",
+				"type": "text/javascript",
+				"exec": [
+					"pm.globals.set('loadUtils', function loadUtils() {",
+					"\tlet utils = {};",
+					"\tutils.utilsBody = function utilsBody() {",
+					"        ",
+					"\t\tpm.variables.set(\"content_body\", (pm.variables.get(\"json\")));",
+					"",
+					"\t}",
+					"\treturn utils;",
+					"} + '; loadUtils();');"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4bc265f4-6bc6-498e-8610-f2f550b18e58",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "54e5a6d8-3c35-41ed-b9fb-60a2df6c0200",
+			"key": "task_1_url",
+			"value": "https://jsonplaceholder.typicode.com/"
+		},
+		{
+			"id": "c07f6a91-0702-45be-b426-60bcafe042c1",
+			"key": "task_2_jira_url",
+			"value": "http://89.223.126.182:8080/rest/api/2/"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
