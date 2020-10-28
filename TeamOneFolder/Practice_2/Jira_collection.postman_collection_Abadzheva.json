@@ -113,6 +113,11 @@
 							"pm.test(\"Check summary&description\", function() {",
 							"    pm.expect(JsonData.fields.summary).to.eql(pm.environment.get(\"summary\"));",
 							"    pm.expect(JsonData.fields.description).to.eql(pm.environment.get(\"description\"));",
+							"    pm.environment.set(\"statusName\", JsonData.fields.status.name);",
+							"});",
+							"",
+							"pm.test(\"Set Variables\", function() {",
+							"    pm.environment.set(\"statusName\", JsonData.fields.status.name);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -223,6 +228,11 @@
 							"",
 							"pm.test(\"Set Variables\", function() {",
 							"    pm.environment.set(\"statusName\", JsonData.fields.status.name);",
+							"});",
+							"",
+							"var JsonData = JSON.parse(responseBody);",
+							"pm.test(\"Check statusName\", function() {",
+							"    pm.expect(JsonData.fields.status.name).to.eql(pm.environment.get(\"statusName\"));",
 							"});"
 						],
 						"type": "text/javascript"
@@ -281,7 +291,7 @@
 	],
 	"variable": [
 		{
-			"id": "f1e67ac7-380b-4cda-9dce-536cde52db9c",
+			"id": "2119ee47-203f-44bc-a5ce-881d55adf8e2",
 			"key": "URL",
 			"value": "http://89.223.126.182:8080/rest/api/2/"
 		}
