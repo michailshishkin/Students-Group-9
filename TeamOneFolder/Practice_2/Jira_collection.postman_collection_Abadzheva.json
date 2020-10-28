@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "5c646b06-abe2-4f75-961b-db0ce28c34d9",
+		"name": "Jira_collection",
+		"description": "First test requests to Jira API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Request projects information.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2af1154e-4f1e-4144-8add-ecafb3149858",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var JsonData = JSON.parse(responseBody);",
+							"",
+							"pm.test(\"Set Variables\", function() {",
+							"    pm.environment.set(\"projectKey\", JsonData.projects[2].key);",
+							"    pm.environment.set(\"issueTypeId\", JsonData.projects[2].issuetypes[0].id);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}issue/createmeta",
+					"host": [
+						"{{URL}}issue"
+					],
+					"path": [
+						"createmeta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Add issue.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "53457c69-9986-41bf-b65d-333bb237e8c2",
+						"exec": [
+							"var rnd = Math.random();",
+							"",
+							"pm.test(\"PreRequest\", function() {",
+							"    pm.environment.set(\"summary\", \"Abadzheva: AT_\" + rnd);",
+							"    pm.environment.set(\"description\", \"Description: AT_\" + rnd);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "49b3aefd-06c2-48c4-9ef8-edfa72efe2e0",
+						"exec": [
+							"var JsonData = JSON.parse(responseBody);",
+							"pm.test(\"Set Url_issue\", function() {",
+							"    pm.environment.set(\"URLIssue\", JsonData.self);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fields\": {\n    \"project\": {\n      \"key\": \"{{projectKey}}\"\n    },\n    \"summary\": \"{{summary}}\",\n    \"description\": \"{{description}}\",\n    \"issuetype\": {\n      \"id\": \"{{issueTypeId}}\"\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}issue",
+					"host": [
+						"{{URL}}issue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Get issue.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6a15d439-7152-484e-b9c9-9027f784c1e5",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var JsonData = JSON.parse(responseBody);",
+							"pm.test(\"Check summary&description\", function() {",
+							"    pm.expect(JsonData.fields.summary).to.eql(pm.environment.get(\"summary\"));",
+							"    pm.expect(JsonData.fields.description).to.eql(pm.environment.get(\"description\"));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URLIssue}}",
+					"host": [
+						"{{URLIssue}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Get transitions.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "592059aa-405b-4da1-9dbf-726f15a5ee02",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URLIssue}}/transitions",
+					"host": [
+						"{{URLIssue}}"
+					],
+					"path": [
+						"transitions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Ghange issue status.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4e6c559f-76f1-4301-aebd-5a34b6b7f0a6",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"transition\": {\n      \"id\": \"21\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLIssue}}/transitions",
+					"host": [
+						"{{URLIssue}}"
+					],
+					"path": [
+						"transitions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Get new issue status.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cbd5fae4-fb2c-4998-bb69-ff063e2fe37e",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var JsonData = JSON.parse(responseBody);",
+							"",
+							"pm.test(\"Set Variables\", function() {",
+							"    pm.environment.set(\"statusName\", JsonData.fields.status.name);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URLIssue}}",
+					"host": [
+						"{{URLIssue}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "123456",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "team1",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "18e4c209-a09b-4c45-90d1-f58795294de7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a43ae1b7-e6e9-4f14-b959-559dbfffc27b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "f1e67ac7-380b-4cda-9dce-536cde52db9c",
+			"key": "URL",
+			"value": "http://89.223.126.182:8080/rest/api/2/"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
