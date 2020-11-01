@@ -1,7 +1,4 @@
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.concurrent.TimeUnit;
+
 
 public class FirstTest {
     private static WebDriver driver;
@@ -23,10 +21,10 @@ public class FirstTest {
     private static String NumberOrder;
     private static String TotalAmount;
     private static String Currency;
+    private static String CardType;
 
-
-    @BeforeClass
-    public static void setUp() {
+    @Before
+    public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src\\test\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -46,7 +44,7 @@ public class FirstTest {
     }
 
     @Test
-    public void firstAttepmts() {
+    public void T1() {
         cardNumber.sendKeys("4000000000000002");
         cardHolder.sendKeys("John Doe");
         expiresMonth.selectByIndex(7);
@@ -57,14 +55,105 @@ public class FirstTest {
         WebElement successAction = driver.findElement(By.id("success"));
         successAction.submit();
 
-        String paymentStatus = driver.findElement(By.cssSelector("#payment-status-title > span")).getText();
-        Assert.assertEquals("Success", paymentStatus);
+        String paymentStatus = driver.findElement(By.cssSelector("#payment-item-status")).getText();
+        Assert.assertEquals("Payment status Confirmed", paymentStatus);
         Assert.assertEquals(NumberOrder, driver.findElement(By.cssSelector("#payment-item-ordernumber > div.payment-info-item-data")).getText());
         Assert.assertEquals("JOHN DOE", driver.findElement(By.cssSelector("#payment-item-cardholder > div.payment-info-item-data")).getText());
         Assert.assertEquals(TotalAmount, driver.findElement(By.cssSelector("#payment-item-total-amount")).getText());
-
-        driver.quit();
-
-
     }
+
+    @Test
+    public void T2() {
+        cardNumber.sendKeys("5555555555554444");
+        cardHolder.sendKeys("Mr Smith");
+        expiresMonth.selectByIndex(7);
+        expiresYear.selectByValue("2024");
+        cardCvc.sendKeys("777");
+        actionSubmit.click();
+
+        WebElement successAction = driver.findElement(By.id("failure"));
+        successAction.submit();
+
+        String paymentStatus = driver.findElement(By.cssSelector("#payment-item-status")).getText();
+        Assert.assertEquals("Payment status Declined by issuing bank", paymentStatus);
+        Assert.assertEquals(NumberOrder, driver.findElement(By.cssSelector("#payment-item-ordernumber > div.payment-info-item-data")).getText());
+        Assert.assertEquals("MR SMITH", driver.findElement(By.cssSelector("#payment-item-cardholder > div.payment-info-item-data")).getText());
+        Assert.assertEquals(TotalAmount, driver.findElement(By.cssSelector("#payment-item-total-amount")).getText());
+    }
+
+    @Test
+    public void T3() {
+        cardNumber.sendKeys("4000000000000044");
+        cardHolder.sendKeys("John Doe");
+        expiresMonth.selectByIndex(7);
+        expiresYear.selectByValue("2024");
+        cardCvc.sendKeys("777");
+        actionSubmit.click();
+
+        WebElement successAction = driver.findElement(By.id("failure"));
+        successAction.submit();
+
+        String paymentStatus = driver.findElement(By.cssSelector("#payment-item-status")).getText();
+        Assert.assertEquals("Payment status Pending", paymentStatus);
+        Assert.assertEquals(NumberOrder, driver.findElement(By.cssSelector("#payment-item-ordernumber > div.payment-info-item-data")).getText());
+        Assert.assertEquals("JOHN DOE", driver.findElement(By.cssSelector("#payment-item-cardholder > div.payment-info-item-data")).getText());
+        Assert.assertEquals(TotalAmount, driver.findElement(By.cssSelector("#payment-item-total-amount")).getText());
+    }
+
+    @Test
+    public void T4() {
+        cardNumber.sendKeys("4000000000000077");
+        cardHolder.sendKeys("Mr Pony");
+        expiresMonth.selectByIndex(11);
+        expiresYear.selectByValue("2023");
+        cardCvc.sendKeys("125");
+        actionSubmit.click();
+
+
+        String paymentStatus = driver.findElement(By.cssSelector("#payment-item-status")).getText();
+        Assert.assertEquals("Payment status Confirmed", paymentStatus);
+        Assert.assertEquals(NumberOrder, driver.findElement(By.cssSelector("#payment-item-ordernumber > div.payment-info-item-data")).getText());
+        Assert.assertEquals("MR PONY", driver.findElement(By.cssSelector("#payment-item-cardholder > div.payment-info-item-data")).getText());
+        Assert.assertEquals(TotalAmount, driver.findElement(By.cssSelector("#payment-item-total-amount")).getText());
+    }
+
+    @Test
+    public void T5() {
+        cardNumber.sendKeys("5555555555554477");
+        cardHolder.sendKeys("Mr Pony");
+        expiresMonth.selectByIndex(11);
+        expiresYear.selectByValue("2023");
+        cardCvc.sendKeys("125");
+        actionSubmit.click();
+
+
+        String paymentStatus = driver.findElement(By.cssSelector("#payment-item-status")).getText();
+        Assert.assertEquals("Payment status Declined by issuing bank", paymentStatus);
+        Assert.assertEquals(NumberOrder, driver.findElement(By.cssSelector("#payment-item-ordernumber > div.payment-info-item-data")).getText());
+        Assert.assertEquals("MR PONY", driver.findElement(By.cssSelector("#payment-item-cardholder > div.payment-info-item-data")).getText());
+        Assert.assertEquals(TotalAmount, driver.findElement(By.cssSelector("#payment-item-total-amount")).getText());
+    }
+
+    @Test
+    public void T6() {
+        cardNumber.sendKeys("4000000000000051");
+        cardHolder.sendKeys("Mr Pony");
+        expiresMonth.selectByIndex(11);
+        expiresYear.selectByValue("2023");
+        cardCvc.sendKeys("125");
+        actionSubmit.click();
+
+
+        String paymentStatus = driver.findElement(By.cssSelector("#payment-item-status")).getText();
+        Assert.assertEquals("Payment status Pending", paymentStatus);
+        Assert.assertEquals(NumberOrder, driver.findElement(By.cssSelector("#payment-item-ordernumber > div.payment-info-item-data")).getText());
+        Assert.assertEquals("MR PONY", driver.findElement(By.cssSelector("#payment-item-cardholder > div.payment-info-item-data")).getText());
+        Assert.assertEquals(TotalAmount, driver.findElement(By.cssSelector("#payment-item-total-amount")).getText());
+    }
+
+    @After
+    public void close() {
+        driver.quit();
+    }
+
 }
