@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "c8226c6e-eca3-40b7-9918-c3d8ea9499a6",
+		"name": "YouTrack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET project/all",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4c7dd9bd-0cbf-4f5a-9e40-0fbac53538c1",
+						"exec": [
+							"var JsonData = JSON.parse(responseBody);",
+							"pm.test(\"Status Check\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Set Variable\", function () {",
+							"    pm.environment.set(\"ProjectId\", JsonData[2].id);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/admin/projects?fields=id,name,shortName",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"admin",
+						"projects"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "id,name,shortName"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST New issue",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "19ff3db5-c10e-490e-96b2-519f20f696af",
+						"exec": [
+							"var rnd = Math.random();",
+							"pm.test(\"PreRequest\", function() {",
+							"    pm.environment.set(\"summary\", \"Abadzheva: AT_\" + rnd);",
+							"    pm.environment.set(\"description\", \"Description: AT_\" + rnd);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "08f46489-3df9-4650-81f4-fc1d2d726d6a",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var JsonData = JSON.parse(responseBody);",
+							"pm.test(\"Set Url_issue\", function() {",
+							"    pm.environment.set(\"IssueID\", JsonData.id);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"project\": {\n        \"id\": \"{{ProjectId}}\"\n    },\n    \"summary\": \"{{summary}}\",\n    \"description\":\"{{description}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/issues",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET customFields",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "db09bce3-4ffc-43da-b4d6-94ee52a9e22a",
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var JsonData = JSON.parse(responseBody);",
+							"pm.test(\"Check summary&description\", function() {",
+							"    pm.expect(JsonData.summary).to.eql(pm.environment.get(\"summary\"));",
+							"    pm.expect(JsonData.description).to.eql(pm.environment.get(\"description\"));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/issues/{{IssueID}}?fields=id,summary,description",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"issues",
+						"{{IssueID}}"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "id,summary,description"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Change State Issue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87340cc4-19d8-4ba3-b7d7-5f95d19b4f6c",
+						"exec": [
+							"pm.test(\"Status Check\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var JsonData = JSON.parse(responseBody);",
+							"pm.test(\"Check Stage\", function() {",
+							"    pm.expect(JsonData.customFields[3].value.name).to.eql(\"Test\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customFields\": [\n        {\n            \"name\": \"Stage\",\n            \"$type\": \"StateIssueCustomField\",\n            \"value\": {\n                \"name\": \"Test\", \n                \"$type\": \"StateBundleElement\" \n            }\n        }\n    ]  \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/issues/{{IssueID}}?fields=customFields(id,name,value(name))",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"issues",
+						"{{IssueID}}"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "customFields(id,name,value(name))"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "123456",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "team1",
+				"type": "string"
+			}
+		]
+	},
+	"protocolProfileBehavior": {}
+}
