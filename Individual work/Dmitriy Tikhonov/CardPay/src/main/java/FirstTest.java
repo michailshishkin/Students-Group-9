@@ -1,4 +1,5 @@
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.*;
@@ -54,9 +55,48 @@ public class FirstTest {
         cardCvc.sendKeys("395");
 
         cvcHintToogle.click();
-        File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(src,new File("target\\screenshot\\screenshot.png"));
-//        actionSubmit.click();
+
+        /*/Делаем скрин/*/
+        File cvcHintToogle = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(cvcHintToogle,new File("target\\screenshot\\cvcHintToogle.png"));
+
+        actionSubmit.click();
+        WebElement successAction = driver.findElement(By.id("success"));
+        successAction.submit();
+
+        String paymentStatus = driver.findElement(By.cssSelector("#payment-status-title > span")).getText();
+        Assert.assertEquals("Success", paymentStatus);
+        Assert.assertEquals(NumberOrder, driver.findElement(By.cssSelector("#payment-item-ordernumber > div.payment-info-item-data")).getText());
+        Assert.assertEquals("DIMASIK", driver.findElement(By.cssSelector("#payment-item-cardholder > div.payment-info-item-data")).getText());
+        Assert.assertEquals(TotalAmount, driver.findElement(By.cssSelector("#payment-item-total-amount")).getText());
+
+        /*/Делаем скрин/*/
+        File CONFIRMEDas3DSecuretransaction = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(CONFIRMEDas3DSecuretransaction,new File("target\\screenshot\\CONFIRMED as 3-D Secure transaction.png"));
+
+        driver.get("https://sandbox.cardpay.com/MI/cardpayment2.html?orderXml=PE9SREVSIFdBTExFVF9JRD0nODI5OScgT1JERVJfTlVNQkVSPSc0NTgyMTEnIEFNT1VOVD0nMjkxLjg2JyBDVVJSRU5DWT0nRVVSJyAgRU1BSUw9J2N1c3RvbWVyQGV4YW1wbGUuY29tJz4KPEFERFJFU1MgQ09VTlRSWT0nVVNBJyBTVEFURT0nTlknIFpJUD0nMTAwMDEnIENJVFk9J05ZJyBTVFJFRVQ9JzY3NyBTVFJFRVQnIFBIT05FPSc4NzY5OTA5MCcgVFlQRT0nQklMTElORycvPgo8L09SREVSPg==&sha512=998150a2b27484b776a1628bfe7505a9cb430f276dfa35b14315c1c8f03381a90490f6608f0dcff789273e05926cd782e1bb941418a9673f43c47595aa7b8b0d");
     }
 
+    @Test
+    public void secondsAttempts() throws IOException{
+        cardNumber.sendKeys("5555555555554444");
+        cardHolder.sendKeys("Dimasik");
+        expiresMonth.selectByIndex(11);
+        expiresYear.selectByValue("2024");
+        cardCvc.sendKeys("395");
+
+        actionSubmit.click();
+        WebElement successAction = driver.findElement(By.id("success"));
+        successAction.submit();
+
+        String paymentStatus = driver.findElement(By.cssSelector("#payment-status-title > span")).getText();
+        Assert.assertEquals("Decline", paymentStatus);
+        Assert.assertEquals(NumberOrder, driver.findElement(By.cssSelector("#payment-item-ordernumber > div.payment-info-item-data")).getText());
+        Assert.assertEquals("DIMASIK", driver.findElement(By.cssSelector("#payment-item-cardholder > div.payment-info-item-data")).getText());
+        Assert.assertEquals(TotalAmount, driver.findElement(By.cssSelector("#payment-item-total-amount")).getText());
+
+        /*/Делаем скрин/*/
+        File DECLINEDas3DSecuretransaction = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(DECLINEDas3DSecuretransaction,new File("target\\screenshot\\DECLINED as 3-D Secure transaction.png"));
 }
+    }
