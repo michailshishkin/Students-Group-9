@@ -17,7 +17,7 @@ public class first_test {
     }
 
     @Test
-    public void firatAttepmts() {
+    public void firstAttepmts() {
 
     }
 }
