@@ -1,10 +1,11 @@
-import org.junit.*;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-
 import java.util.concurrent.TimeUnit;
 
 
@@ -18,6 +19,7 @@ public class FirstTest {
     private static WebElement dataShipping;
     private static WebElement actionSubmit;
     private static WebElement actionCancel;
+    private static WebElement actionHint;
     private static String NumberOrder;
     private static String TotalAmount;
     private static String Currency;
@@ -37,6 +39,7 @@ public class FirstTest {
         cardCvc = driver.findElement(By.id("input-card-cvc"));
         actionSubmit = driver.findElement(By.id("action-submit"));
         actionCancel = driver.findElement(By.id("action-cancel"));
+        actionHint = driver.findElement(By.id("cvc-hint-toggle"));
 
         NumberOrder = driver.findElement(By.id("order-number")).getText();
         TotalAmount = driver.findElement(By.id("total-amount")).getText();
@@ -151,9 +154,24 @@ public class FirstTest {
         Assert.assertEquals(TotalAmount, driver.findElement(By.cssSelector("#payment-item-total-amount")).getText());
     }
 
-    @After
-    public void close() {
-        driver.quit();
+    @Test
+    public void T7_znakvoprosa() {
+
+        cardNumber.sendKeys("4000000000000051");
+        cardHolder.sendKeys("Mr Pony");
+        expiresMonth.selectByIndex(11);
+        expiresYear.selectByValue("2023");
+        cardCvc.sendKeys("125");
+        actionHint.click();
+
+
     }
+
+
+
+    //@After
+    //public void close() {
+    //     driver.quit();
+    // }
 
 }
