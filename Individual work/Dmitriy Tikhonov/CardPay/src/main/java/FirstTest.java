@@ -131,7 +131,7 @@ public class FirstTest {
     @Test
     public void fourthAttempts() throws IOException { //Четвертый тест. Невалидные данные
         cardNumber.sendKeys("5305395333333333");
-        cardHolder.sendKeys("Dimasik");
+        cardHolder.sendKeys("D1");
         expiresMonth.selectByIndex(11);
         expiresYear.selectByValue("2024");
         cardCvc.sendKeys("395");
@@ -139,14 +139,16 @@ public class FirstTest {
         actionSubmit.click();
 
         Assert.assertEquals("Card number is not valid", driver.findElement(By.cssSelector("#card-number-field > div > label")).getText());
+        Assert.assertEquals("Cardholder name is not valid", driver.findElement(By.cssSelector("#card-holder-field > div > label")).getText());
 
         /*/Делаем скрин/*/
         File CardNumberIsNotValid = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(CardNumberIsNotValid, new File("target\\screenshot\\Card number is not valid.png"));
     }
 
-//    @AfterClass
-//    public static void tearDown() {
-//        driver.quit();
-//    }
+    @AfterClass
+    public static void tearDown() {
+        driver.quit();
+    }
 }
+
