@@ -20,9 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="170cf5aa-b37a-4cc2-9583-6c685f89acf9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../CardPay/src/main/java/FirstTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CardPay/src/main/java/FirsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CardPay/CardPay.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CardPay/src/main/java/FirsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice#3/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice#3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice#3/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice#3/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice#3/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice#3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice#3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice#3/CardPay.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice#3/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice#3/src/test/java/FirstTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
