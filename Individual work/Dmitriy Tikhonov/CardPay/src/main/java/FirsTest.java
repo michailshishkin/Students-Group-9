@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class FirstTest {
+public class FirsTest {
     private  static WebDriver driver;
 
     @BeforeClass
@@ -18,6 +18,5 @@ public class FirstTest {
 
     @Test
     public void firstAttempts() {
-        
     }
 }
