@@ -1,21 +1,24 @@
+import org.apache.commons.io.FileUtils;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class FirstTest {
     private static WebDriver driver;
     private static WebElement cardNumber;
     private static WebElement cardHolder;
-    private static WebElement expiresMonth;
-    private static WebElement expiresYear;
+    private static Select expiresMonth;
+    private static Select expiresYear;
     private static WebElement cardCvc;
     private static WebElement actionSubmit;
     private static WebElement actionCancel;
+    private static WebElement cvcHintToogle;
     private static String NumberOrder;
     private static String TotalAmount;
     private static String Currency;
@@ -29,19 +32,31 @@ public class FirstTest {
 
         cardNumber = driver.findElement(By.id("input-card-number"));
         cardHolder = driver.findElement(By.id("input-card-holder"));
-        expiresMonth = driver.findElement(By.id("card-expires-month"));
-        expiresYear = driver.findElement(By.id("card-expires-year"));
+        expiresMonth = new Select(driver.findElement(By.id("card-expires-month")));
+        expiresYear = new Select(driver.findElement(By.id("card-expires-year")));
         cardCvc = driver.findElement(By.id("input-card-cvc"));
         actionSubmit = driver.findElement(By.id("action-submit"));
         actionCancel = driver.findElement(By.id("action-cancel"));
 
         NumberOrder = driver.findElement(By.id("order-number")).getText();
-        TotalAmount = driver.findElement(By.id("total-amount")).getText();;
-        Currency = driver.findElement(By.id("currency")).getText();;
+        TotalAmount = driver.findElement(By.id("total-amount")).getText();
+        Currency = driver.findElement(By.id("currency")).getText();
+
+        cvcHintToogle = driver.findElement((By.id("cvc-hint-toggle")));
     }
 
     @Test
-    public void firstAttempts() {
+    public void firstAttempts() throws IOException{
         cardNumber.sendKeys("4000000000000002");
+        cardHolder.sendKeys("Dimasik");
+        expiresMonth.selectByIndex(11);
+        expiresYear.selectByValue("2024");
+        cardCvc.sendKeys("395");
+
+        cvcHintToogle.click();
+        File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(src,new File("target\\screenshot\\screenshot.png"));
+//        actionSubmit.click();
     }
+
 }
