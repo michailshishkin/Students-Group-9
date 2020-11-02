@@ -1,0 +1,355 @@
+{
+	"variables": [],
+	"info": {
+		"name": "FirstCollection YouTrack01",
+		"_postman_id": "30dbfe2e-5177-ce39-3c07-39833270e88c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "YouTrack",
+			"description": "",
+			"item": [
+				{
+					"name": "FirstRequest customField",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var JsonData = JSON.parse(responseBody);\r",
+									"pm.test(\"Status Check\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Set Var projectID\", function () {\r",
+									"    pm.environment.set(\"projectId\", \"0-4\");\r",
+									"});\r",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": {
+							"raw": "{{URL}}/api/admin/projects?fields=id,name,shortName,createdBy(login,name,id),leader(login,name,id)",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "id,name,shortName,createdBy(login,name,id),leader(login,name,id)"
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "New issues",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"const jsonData = JSON.parse(responseBody);",
+									"pm.test(\"Status Check\", function() {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Set issue id\", function() {",
+									"    pm.environment.set(\"issueId\", jsonData.id)",
+									"});"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var rnd = Math.random();\r",
+									"pm.test(\"PreRequest\", function (){\r",
+									"    pm.environment.set(\"Summary\", \"Lazarev - AT_\" + rnd);\r",
+									"    pm.environment.set(\"Description\", \"Description_AT_\" + rnd);\r",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{URL}}/api/issues",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"project\": { \"id\": \"{{projectId}}\" },\n  \"summary\": \"{{Summary}}\",\n  \"description\": \"{{Description}}\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get all issues",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var JsonData = JSON.parse(responseBody);\r",
+									"pm.test(\"Status Check\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    });"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": {
+							"raw": "{{URL}}/api/issues?fields=id,summary,description,created",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"issues"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "id,summary,description,created"
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get created Issue",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"const JsonData = JSON.parse(responseBody);",
+									"pm.test(\"Status Check\", function() {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"  pm.test(\"Test for Summary&Description\", function () {",
+									"  pm.expect(JsonData.summary).to.eql(pm.environment.get(\"Summary\"));",
+									"  pm.expect(JsonData.description).to.eql(pm.environment.get(\"Description\"));",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": {
+							"raw": "{{URL}}/api/issues/{{issueId}}?fields=id,summary,description,created",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"issues",
+								"{{issueId}}"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "id,summary,description,created"
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "State In Progress",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"const jsonData = JSON.parse(responseBody);",
+									"pm.test(\"Status Check\", function() {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Issue Status Check\", function() {",
+									"    const stateField = jsonData.customFields.find(",
+									"        field => field.name === 'State'",
+									"    );",
+									"    pm.expect(stateField.value.name).to.eql('In Progress');",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": {
+							"raw": "{{URL}}/api/issues/{{issueId}}?fields=customFields(id,name,value(name))",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"issues",
+								"{{issueId}}"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "customFields(id,name,value(name))"
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customFields\": [\n        {\n            \"name\": \"State\",\n            \"$type\": \"StateIssueCustomField\",\n            \"value\": {\n                \"name\": \"In Progress\", \n                \"$type\": \"StateBundleElement\" \n            }\n        }\n    ]  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get  users id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"const jsonData = JSON.parse(responseBody);",
+									"pm.test(\"Status Check\", function() {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Set user id\", function() {",
+									"    const user = jsonData.find(field => field.name === 'Students'",
+									"    );",
+									"    pm.environment.set(\"UserId\", user.id)",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": {
+							"raw": "{{URL}}/api/users?fields=name,id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "name,id"
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "assign to user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"const jsonData = JSON.parse(responseBody);",
+									"pm.test(\"Status Check\", function() {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"SCheck issue assignee\", function() {",
+									"const assigneeField = jsonData.customFields.find(",
+									"        field => field.name === 'Assignee'",
+									"    );",
+									"    pm.expect(assigneeField.value.id).to.eql(pm.environment.get('UserId'));",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": {
+							"raw": "{{URL}}/api/issues/{{issueId}}?fields=customFields(id,name,value(id,name,value))",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"issues",
+								"{{issueId}}"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "customFields(id,name,value(id,name,value))"
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customFields\": [\n        {\n            \"name\": \"Assignee\",\n            \"$type\": \"SingleUserIssueCustomField\",\n            \"value\": {\n                \"id\": \"{{UserId}}\",\n                \"name\": \"Students\",\n                \"$type\": \"User\"\n            }\n        }\n    ]  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
