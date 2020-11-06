@@ -1,0 +1,44 @@
+{
+	"id": "8789e601-78ba-41c6-afcc-b675f24d58f2",
+	"name": "jira",
+	"values": [
+		{
+			"key": "issueId",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "keyProject",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "des",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "sum",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "urlIssue",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "keyIssue",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "statusId",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-11-06T18:49:00.511Z",
+	"_postman_exported_using": "Postman/7.34.0"
+}
