@@ -1,0 +1,39 @@
+{
+	"id": "c34992f7-92b7-4d38-ae58-de2f119267bb",
+	"name": "variables",
+	"values": [
+		{
+			"key": "projectId",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "des",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "sum",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "issueId",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "priorityId",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "typeIssueId",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-11-06T17:32:19.565Z",
+	"_postman_exported_using": "Postman/7.34.0"
+}

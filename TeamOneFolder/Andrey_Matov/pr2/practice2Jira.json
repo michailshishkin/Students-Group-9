@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "43b115ae-99bc-43ea-95d9-f3a23e54fae4",
+		"name": "Jira",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "82672fa2-8dcc-4ead-b14f-22d400255caf",
+						"exec": [
+							"var body = JSON.parse(responseBody);\r",
+							"pm.test('создание переменных', function(){\r",
+							"\r",
+							"    pm.environment.set(\"keyProject\", body.projects[2].key);\r",
+							"\r",
+							"    pm.environment.set(\"issueId\", body.projects[2].issuetypes[0].id);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}issue/createmeta",
+					"host": [
+						"{{url}}issue"
+					],
+					"path": [
+						"createmeta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5db9bf4b-366d-4a67-893d-70ab64e73f07",
+						"exec": [
+							"var ran = Math.random();\r",
+							"pm.test(\"fsd\", function(){\r",
+							"    pm.environment.set(\"sum\", \"Matov  : \" + ran);\r",
+							"\r",
+							"    pm.environment.set(\"des\", \"Matov : \" + pm.variables.replaceIn('{{$randomLoremText}}'));\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c1aafe13-a58c-4fc3-8b46-73cee961f89a",
+						"exec": [
+							"var key = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.test(\"get link\", function(){\r",
+							"    \r",
+							"    pm.environment.set(\"keyIssue\", key.key);\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fields\": {\r\n    \"project\": { \r\n      \"key\": \"{{keyProject}}\"\r\n    },\r\n    \"summary\": \"{{sum}}\",\r\n    \"description\": \"{{des}}\",\r\n    \"issuetype\": {\r\n      \"id\": \"{{issueId}}\"\r\n    }\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}issue",
+					"host": [
+						"{{url}}issue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "issueInfo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8ac00a5d-e898-454c-a744-bbdd23d65644",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}issue/{{keyIssue}}/transitions",
+					"host": [
+						"{{url}}issue"
+					],
+					"path": [
+						"{{keyIssue}}",
+						"transitions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chengeStatus",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "drinkens86@gmail.com",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "testjira20102020",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dabe6bf1-ae4b-43a9-8a15-47eb0a9d8767",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4c94fde4-a7d7-4650-8fdd-963f0dcfb9fc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "d73ee00d-daab-44ea-8825-0afca4d6acff",
+			"key": "url",
+			"value": "https://jiraslavazz.myvnc.com/rest/api/2/"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
