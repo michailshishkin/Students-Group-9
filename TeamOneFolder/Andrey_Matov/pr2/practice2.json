@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "71c47980-eb6a-402c-aed5-06a8bfc57257",
+		"name": "YouTrack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllProject",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1609fe98-9639-4f39-98fb-8a7c06c0bc23",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"var jsonObject = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.test(\"varik\", function(){\r",
+							"\r",
+							"pm.environment.set(\"projectId\", jsonObject[2].id);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{youTrack}}admin/projects?fields=id,name,shortName",
+					"host": [
+						"{{youTrack}}admin"
+					],
+					"path": [
+						"projects"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "id,name,shortName"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "creatIssue",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d24c9d14-3bbc-471b-87a4-89fb9df231ca",
+						"exec": [
+							"var random_num = Math.random();\r",
+							"\r",
+							"pm.test(\"fill_num\", function(){\r",
+							"    pm.environment.set('sum', \"Matov - \" + random_num);\r",
+							"})\r",
+							"\r",
+							"    pm.test(\"fill_art\", function(){\r",
+							"        pm.environment.set(\"des\",  \"Matov \" + pm.variables.replaceIn('{{$randomLoremText}}'));\r",
+							"    })\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a72594df-0922-45d8-911f-c9a83496b421",
+						"exec": [
+							"var JsonUrl = JSON.parse(responseBody);\r",
+							"pm.test(\"get url\", function(){\r",
+							"   pm.environment.set(\"issueId\", JsonUrl.id);\r",
+							"\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"project\":{\"id\":\"{{projectId}}\"},\r\n\"summary\":\"{{sum}}\",\r\n\"description\":\"{{des}}\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{youTrack}}issues",
+					"host": [
+						"{{youTrack}}issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "issueIInfo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4bc46f1c-493d-4073-8af6-fa2584b0b313",
+						"exec": [
+							"var priorityId = JSON.parse(responseBody);\r",
+							"\r",
+							"    pm.test(\"getPriorityId\", function(){\r",
+							"\r",
+							"pm.environment.set(\"priorityId\", priorityId.customFields[0].projectCustomField.id);\r",
+							"    })"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{youTrack}}issues/{{issueId}}?fields=$type,id,summary,customFields($type,id,projectCustomField($type,id,field($type,id,name)),value($type,avatarUrl,buildLink,color(id),fullName,id,isResolved,localizedName,login,minutes,name,presentation,text))",
+					"host": [
+						"{{youTrack}}issues"
+					],
+					"path": [
+						"{{issueId}}"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "$type,id,summary,customFields($type,id,projectCustomField($type,id,field($type,id,name)),value($type,avatarUrl,buildLink,color(id),fullName,id,isResolved,localizedName,login,minutes,name,presentation,text))"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getIdStatusPriority",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7ec82d0c-74d8-40d3-868b-f9ef044226d1",
+						"exec": [
+							"var jsonObject = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.test(\"getPriorityId\", function(){\r",
+							"\r",
+							"pm.environment.set(\"typeIssueId\", jsonObject.bundle.values[1].id);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{youTrack}}admin/projects/{{projectId}}/customFields/{{priorityId}}?fields=bundle(values(id,name,$type),aggregatedUsers(id,name,$type))",
+					"host": [
+						"{{youTrack}}admin"
+					],
+					"path": [
+						"projects",
+						"{{projectId}}",
+						"customFields",
+						"{{priorityId}}"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "bundle(values(id,name,$type),aggregatedUsers(id,name,$type))"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changePriority",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"customFields\": [\r\n{\"name\":\"Priority\",\"$type\":\"SingleEnumIssueCustomField\",\"id\":\"{{priorityId}}\",\"value\":{\"id\":\"{{typeIssueId}}\"}}\r\n]}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{youTrack}}issues/{{issueId}}?fields=customFields(id,name,value(avatarUrl,buildLink,color(id),fullName,id,isResolved,localizedName,login,minutes,name,presentation,text))",
+					"host": [
+						"{{youTrack}}issues"
+					],
+					"path": [
+						"{{issueId}}"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "customFields(id,name,value(avatarUrl,buildLink,color(id),fullName,id,isResolved,localizedName,login,minutes,name,presentation,text))"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "Team1",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "123456",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "92c78f0d-2f9d-4214-8c71-02d83c06e299",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "50fadf82-cacb-4ed8-8f06-adf7bce22b5a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "6bec9cb2-12f6-4fc2-bfb3-6c56df5aca2c",
+			"key": "youTrack",
+			"value": "http://89.223.126.182:8081/api/"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
