@@ -1,0 +1,1 @@
+http://89.223.126.182:8081/issues/CALCULATOR?q=tag:%20Sabitov%20#issueId=CALCULATOR-13
