@@ -1,0 +1,28 @@
+1)SELECT 'Country', 'Germany' FROM 'Customers'
+Number of Records: 91
+
+select * from Customers WHERE Country = 'Germany'
+Number of Records: 11
+
+SELECT COUNT(*) FROM Customers WHERE Country = 'Germany' 
+Result:
+Number of Records: 1
+COUNT(*)
+11
+
+2)SELECT * FROM Customers WHERE ContactName LIKE '%e' 
+Result:
+Number of Records: 4
+
+3)INSERT INTO Customers
+ VALUES (1001, 'Peel', 'London', 12, 'Tura', 'Russ', 2);
+
+4)UPDATE Customers
+SET CustomerName = 'Pool'
+WHERE CustomerID = 1001;
+
+5)DELETE FROM Customers WHERE CustomerName='Nantes';
+
+6)SELECT Orders.OrderID, Customers.Steven
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
