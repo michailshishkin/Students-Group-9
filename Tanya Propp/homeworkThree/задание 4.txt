@@ -1,0 +1,41 @@
+#/!bin/bash
+
+options=(
+	'1'
+	"2"
+	'3'
+	'4'
+	'5'
+) (Опции/варианты)
+echo 'Please choose an option' пожалуйста, выберите вариант 
+select input in "${options[@]}"; do
+	case "$input" in 
+		"${options[0]}")
+			ls     (файлы в каталоге)
+ 			;;
+		"${options[1]}")
+			date $'+Time: %T\nDate: %D' дата и время
+			;;
+		"${options[2]}")
+			read -p 'What file do you wish to check? ' finput какой файл хотите выбрать?
+			if [[ -d $finput ]]; then
+				format='%s is a directory.\n' при выборк каталога  is a directory"
+			elif [[ -f $finput ]]; then
+				format='%s is a file.\n' при выборе файла "is a file"
+			else
+				format='%s does not exist.\n' если такого файла нет в каталоге, что выводится ообщение "does not exist" (такого не существует)
+			fi
+			printf "$format" "$finput"
+			;;
+		"${options[3]}")
+			read -p 'Please enter filename: ' binput вставить имя файла
+			cp "$binput"{,.bak} 
+			;;
+		"${options[4]}")
+			break
+			;;
+		*)
+			echo 'Not a valid option.' невалидная опция (если выбрано число не входящее в диапазон от 1 до 5)
+			;;
+	esac
+done
