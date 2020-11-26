@@ -1,0 +1,10 @@
+http://89.223.126.182/testrail/index.php?/cases/view/115&group_by=cases:section_id&group_order=asc&group_id=45
+
+http://89.223.126.182/testrail/index.php?/runs/view/26&group_by=tests:status_id&group_order=desc
+
+http://89.223.126.182:8080/browse/HAR-36
+http://89.223.126.182:8080/browse/HAR-35
+http://89.223.126.182:8080/browse/HAR-34
+http://89.223.126.182:8080/browse/HAR-33
+http://89.223.126.182:8080/browse/HAR-32
+http://89.223.126.182:8080/browse/HAR-31

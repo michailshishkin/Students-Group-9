@@ -1,0 +1,41 @@
+#/!bin/bash //начало сценария
+
+options=(	//переменная options, с аргументами от 1 до 5
+	'1'
+	"2"
+	'3'
+	'4'
+	'5'
+)
+echo 'Please choose an option'	//Вывод в консоль пользователя сообщения - Please choose an option
+select input in "${options[@]}"; do
+	case "$input" in //Оператор выбора аргумента от 1 до 5
+		"${options[0]}")	//ввели аргумент 1
+			ls 	//выведен список всех элементов в каталоге
+			;;
+		"${options[1]}")	//ввели аргумент 2
+			date $'+Time: %T\nDate: %D'	//выведена текущее время и дата по серверу
+			;;
+		"${options[2]}")	//ввели аргумент 3
+			read -p 'What file do you wish to check? ' finput	//в консоль выведено сообщение - What file do you wish to check и необходимо указать имя проверяемого файла
+			if [[ -d $finput ]]; then	//если указана директория, будет выведено сообщение is a directory
+				format='%s is a directory.\n'
+			elif [[ -f $finput ]]; then	//если введенный файл существует в данной категории, то выведется имя файла и is a file
+				format='%s is a file.\n'
+			else	//если введенный файл не существует в данной категории, то выведется имя файла и does not exist
+				format='%s does not exist.\n'
+			fi
+			printf "$format" "$finput"
+			;;
+		"${options[3]}")	//ввели аргумент 4
+			read -p 'Please enter filename: ' binput //в консоль выведено сообщение - Please enter filename и необходимо указать имя файла
+			cp "$binput"{,.bak} //если указанный файл найден в текущем каталоге, делается копия файла и добавляется расширение .bak
+			;;
+		"${options[4]}")	//ввели аргумент 5
+			break	//Завершение выполнения сценария скрипта
+			;;
+		*)
+			echo 'Not a valid option.' //если указан аргумент не в диапазоне от 1 до 5, то в консоль будет выведено сообщение - Not a valid option.
+			;;
+	esac
+done
