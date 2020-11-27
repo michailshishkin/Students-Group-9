@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8"/>
+  <link rel="search" type="application/opensearchdescription+xml" href="/static/opensearch.xml?v2" title="Stepik" />
+  <link rel="dns-prefetch" href="//ajax.googleapis.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//stepik.azureedge.net">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="csrf_cookie_name" content="csrftoken">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="p:domain_verify" content="6e51efa10a4869846bae0b408c5aefcd"/>
+  <title>
+  Интерактивный тренажер по SQL — Stepik
+</title>
+
+  
+  
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/static/classic/ico/favicon_152.png?v=1604946520">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/classic/ico/favicon_144.png?v=1604946520">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/static/classic/ico/favicon_120.png?v=1604946520">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/classic/ico/favicon_72.png?v=1604946520">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/static/classic/ico/favicon_57.png?v=1604946520">
+    <link rel="apple-touch-startup-image" href="/static/classic/ico/startup-splash.png?v=1604946520">
+    <link rel="icon" type="image/png" href="/static/classic/ico/favicon_16.png?v=1604946520" sizes="16x16">
+    <link rel="icon" type="image/png" href="/static/classic/ico/favicon_32.png?v=1604946520" sizes="32x32">
+    <link rel="icon" type="image/png" href="/static/classic/ico/favicon_57.png?v=1604946520" sizes="57x57">
+    <link rel="icon" type="image/png" href="/static/classic/ico/favicon_72.png?v=1604946520" sizes="72x72">
+    
+    <link rel="icon" type="image/png" href="/static/classic/ico/favicon_96.png?v=1604946520" sizes="96x96">
+    <link rel="icon" type="image/png" href="/static/classic/ico/favicon_120.png?v=1604946520" sizes="120x120">
+    
+    <link rel="icon" type="image/png" href="/static/classic/ico/favicon_128.png?v=1604946520" sizes="128x128">
+    
+    <link rel="icon" type="image/png" href="/static/classic/ico/favicon_144.png?v=1604946520" sizes="144x144">
+    <link rel="icon" type="image/png" href="/static/classic/ico/favicon_152.png?v=1604946520" sizes="152x152">
+    
+    <link rel="icon" type="image/png" href="/static/classic/ico/favicon_195.png?v=1604946520" sizes="195x195">
+    
+    <link rel="icon" type="image/png" href="/static/classic/ico/favicon_228.png?v=1604946520" sizes="228x228">
+    
+    <meta name="msapplication-TileColor" content="#66cc66">
+    <meta name="msapplication-TileImage" content="/static/classic/ico/favicon_144.png?v=1604946520">
+  
+  <link rel="shortcut icon" href="/static/classic/ico/favicon.ico">
+  <link rel="icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/static/classic/ico/favicon.ico">
+  <link rel="canonical" href="https://stepik.org/course/63054/promo">
+
+  
+    
+      <link rel="alternate" href="android-app://org.stepic.droid/https/stepik.org/course/63054/" />
+    
+      <link rel="alternate" href="ios-app://1064581926/stepic/stepic.org/course/63054/" />
+    
+  
+
+  <meta property="og:site_name" content="Stepik: online education"/>
+  <meta property="og:url" content="https://stepik.org/course/63054/promo"/>
+  <meta name="twitter:site" content="@stepikorg"/>
+  <meta name="fb:app_id" content="171127739724012"/>
+  <meta name="fb:admins" content="764047960"/>
+
+  
+
+<meta name="stepic/config/environment" content="%7B%22modulePrefix%22%3A%22stepic%22%2C%22environment%22%3A%22production%22%2C%22fastboot%22%3A%7B%22hostWhitelist%22%3A%5B%7B%7D%5D%7D%2C%22TRACK_USER_ORDER%22%3A1%2C%22CLIENT_ALLOWED_TIME_DELTA%22%3A60%2C%22PLATFORM_NEWS_FETCH_DELAY%22%3A5000%2C%22CSRF_COOKIE_NAME%22%3A%22csrftoken%22%2C%22API_NAME%22%3A%22self%22%2C%22ANALYTICS%22%3A%7B%22STUB_MODE%22%3Afalse%2C%22STUB_MODE_DEBUG%22%3A%22%22%2C%22GA_ENABLED%22%3Atrue%2C%22YM_ENABLED%22%3Atrue%2C%22AM_ENABLED%22%3Afalse%2C%22FB_ENABLED%22%3Atrue%2C%22GA_GLOBAL_NAME%22%3A%22ga%22%2C%22YM_GLOBAL_NAME%22%3A%22ym%22%2C%22AM_GLOBAL_NAME%22%3A%22amplitude%22%2C%22FB_GLOBAL_NAME%22%3A%22fbq%22%2C%22YM_KEY%22%3A%2230810146%22%2C%22AM_KEY%22%3A%2208041923a0649603910d54d9b55bf2d0%22%2C%22FB_KEY%22%3A%222632341313760664%22%7D%2C%22STATS%22%3A%7B%22IS_ENABLED%22%3Atrue%2C%22SEND_INTERVAL%22%3A20000%2C%22QUEUE_LEN_WARNING%22%3A1000%2C%22GAVEUP_INTERVAL%22%3A3600000%7D%2C%22SOCKET%22%3A%7B%22IS_ENABLED%22%3Atrue%2C%22RECONNECT_INTERVAL%22%3A20000%2C%22MAX_INTERVAL%22%3A300000%2C%22HEARTBEAT%22%3A40000%2C%22DEBUG%22%3Afalse%7D%2C%22STATIC_URL%22%3A%22static%2F%22%2C%22rootURL%22%3A%22%2F%22%2C%22locationType%22%3A%22auto%22%2C%22contentSecurityPolicy%22%3A%7B%22font-src%22%3A%22'self'%20data%3A%20fonts.gstatic.com%22%2C%22connect-src%22%3A%22'self'%22%2C%22style-src%22%3A%22'self'%20'unsafe-inline'%20fonts.googleapis.com%22%2C%22img-src%22%3A%22'self'%20play.google.com%20images.unsplash.com%20ucarecdn.com%22%7D%2C%22stripe_lib_url%22%3A%22https%3A%2F%2Fcheckout.stripe.com%2Fcheckout.js%22%2C%22firebase_lib_url%22%3A%22https%3A%2F%2Fwww.gstatic.com%2Ffirebasejs%2F4.5.0%2Ffirebase.js%22%2C%22kotlin_playground_url%22%3A%22https%3A%2F%2Funpkg.com%2Fkotlin-playground%401%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22_JQUERY_INTEGRATION%22%3Afalse%7D%2C%22APP%22%3A%7B%22LOG_RESOLVER%22%3Afalse%2C%22LOG_ACTIVE_GENERATION%22%3Afalse%2C%22LOG_TRANSITIONS%22%3Afalse%2C%22LOG_TRANSITIONS_INTERNAL%22%3Afalse%2C%22LOG_VIEW_LOOKUPS%22%3Afalse%2C%22name%22%3A%22stepic%22%2C%22version%22%3A%220.0.0%2B7a577d5f%22%7D%2C%22ab_experiments%22%3A%7B%22SPRINT_ID%22%3A%22SPRINT_133%22%2C%22ACTIVE_EXPERIMENTS%22%3A%7B%7D%2C%22ACCEPTED_EXPERIMENTS%22%3A%7B%7D%2C%22REJECTED_EXPERIMENTS%22%3A%7B%7D%7D%2C%22ember-href-to%22%3A%7B%22ignore%22%3A%5B%22catch_all%22%5D%7D%2C%22ember-cli-mirage%22%3A%7B%22enabled%22%3Afalse%2C%22trackRequests%22%3Atrue%2C%22usingProxy%22%3Atrue%2C%22useDefaultPassthroughs%22%3Atrue%7D%2C%22exportApplicationGlobal%22%3Afalse%7D" />
+<!-- EMBER_CLI_FASTBOOT_TITLE --><!-- EMBER_CLI_FASTBOOT_HEAD -->
+
+
+
+  <meta name="fragment" content="!">
+
+
+
+
+<meta name="google-play-app" content="app-id=org.stepic.droid">
+<meta name="apple-itunes-app" content="app-id=1064581926" app-argument="https://stepik.org/course/63054/promo">
+
+
+
+<meta name="description" content="После завершения курса учащиеся научатся проектировать и создавать реляционные базы данных, изучат различные типы SQL-запросов, разберутся, как формулировать, создавать и отлаживать запросы SQL.">
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Интерактивный тренажер по SQL"/>
+<meta property="og:description" content="После завершения курса учащиеся научатся проектировать и создавать реляционные базы данных, изучат различные типы SQL-запросов, разберутся, как формулировать, создавать и отлаживать запросы SQL."/>
+  
+    <meta property="og:image" content="https://stepik.org/media/cache/images/courses/63054/cover_9LJEWOD/0ed8d534d60516b9f6269c99efb85ba1.jpg"/>
+    <meta property="og:image:width" content="200"/>
+    <link rel="image_src" href="https://stepik.org/media/cache/images/courses/63054/cover_9LJEWOD/0ed8d534d60516b9f6269c99efb85ba1.jpg" />
+  
+  
+    <script type="application/ld+json">
+  {"@type": "Product", "name": "\u0418\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0439 \u0442\u0440\u0435\u043d\u0430\u0436\u0435\u0440 \u043f\u043e SQL", "description": "\u041f\u043e\u0441\u043b\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u044f \u043a\u0443\u0440\u0441\u0430 \u0443\u0447\u0430\u0449\u0438\u0435\u0441\u044f \u043d\u0430\u0443\u0447\u0430\u0442\u0441\u044f \u043f\u0440\u043e\u0435\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0438 \u0441\u043e\u0437\u0434\u0430\u0432\u0430\u0442\u044c \u0440\u0435\u043b\u044f\u0446\u0438\u043e\u043d\u043d\u044b\u0435 \u0431\u0430\u0437\u044b \u0434\u0430\u043d\u043d\u044b\u0445, \u0438\u0437\u0443\u0447\u0430\u0442 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u044b\u0435 \u0442\u0438\u043f\u044b SQL-\u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432, \u0440\u0430\u0437\u0431\u0435\u0440\u0443\u0442\u0441\u044f, \u043a\u0430\u043a \u0444\u043e\u0440\u043c\u0443\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c, \u0441\u043e\u0437\u0434\u0430\u0432\u0430\u0442\u044c \u0438 \u043e\u0442\u043b\u0430\u0436\u0438\u0432\u0430\u0442\u044c \u0437\u0430\u043f\u0440\u043e\u0441\u044b SQL.", "url": "https://stepik.org/course/63054/promo", "offers": {"@type": "Offer", "availability": "http://schema.org/InStock", "price": "0", "priceCurrency": "USD", "offeredBy": {"@type": "Organization", "name": "Stepik", "url": "https://stepik.org/"}, "url": "https://stepik.org/course/63054/promo", "validFrom": "2020-04-01T02:00:00+00:00"}, "aggregateRating": {"@type": "AggregateRating", "ratingCount": "194", "ratingValue": "5.0"}, "image": "https://stepik.org/media/cache/images/courses/63054/cover_9LJEWOD/0ed8d534d60516b9f6269c99efb85ba1.jpg", "logo": "https://stepik.org/media/cache/images/courses/63054/cover_9LJEWOD/0ed8d534d60516b9f6269c99efb85ba1.jpg", "@context": "http://schema.org"}
+</script>
+
+  
+
+
+<script type="text/javascript">
+  var STEPIC_LOAD_ANALYTICS = function() {
+    
+    var initializers = {};
+
+initializers.ga = function() {
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PFK8MN3');
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41633741-1', 'auto');
+  ga('require', 'linkid', 'linkid.js');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+};
+
+initializers.ym = function() {
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+};
+
+initializers.am = function() {
+  (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
+  ;r.type="text/javascript";r.async=true
+  ;r.src="https://cdn.amplitude.com/libs/amplitude-4.4.0-min.gz.js"
+  ;r.onload=function(){if(e.amplitude.runQueuedFunctions){
+  e.amplitude.runQueuedFunctions()}else{
+  console.log("[Amplitude] Error: could not load SDK")}}
+  ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
+  ;function s(e,t){e.prototype[t]=function(){
+  this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}
+  var o=function(){this._q=[];return this}
+  ;var a=["add","append","clearAll","prepend","set","setOnce","unset"]
+  ;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]
+  ;return this}
+  ;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]
+  ;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c
+  ;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"]
+  ;function v(e){function t(t){e[t]=function(){
+  e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}
+  for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){
+  e=(!e||e.length===0?"$default_instance":e).toLowerCase()
+  ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
+  ;e.amplitude=n})(window,document);
+};
+
+initializers.fb = function() {
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+};
+
+return initializers;
+
+    
+  };
+</script>
+
+<link rel="preload" as="fetch" href="https://stepik.azureedge.net/static/frontend-build/translations/en.json?v=1604946520">
+<link rel="preload" as="image" href="https://stepik.org/users/318794451/77475474523bb9eed26906e8363f8501a990fdbf/avatar.svg">
+
+
+
+<!--
+     https://developers.google.com/fonts/docs/css2
+     https://csswizardry.com/2020/05/the-fastest-google-fonts
+-->
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+/>
+
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap"
+/>
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap"
+  />
+</noscript>
+
+
+
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+  
+<script type="text/javascript">
+  window.STEPIC_MAIN_CSS_URL = "https://stepik.azureedge.net/static/frontend-build/stepic.css?v=1604946520";
+</script>
+<link rel="preload" as="style" href="https://stepik.azureedge.net/static/frontend-build/critical.css?v=1604946520">
+<link rel="stylesheet" href="https://stepik.azureedge.net/static/frontend-build/vendor.css?v=1604946520">
+<link rel="stylesheet" href="https://stepik.azureedge.net/static/frontend-build/critical.css?v=1604946520">
+<link rel="stylesheet" href="https://stepik.azureedge.net/static/frontend-build/stepic.css?v=1604946520">
+
+</head>
+<body>
+
+
+<!-- EMBER_CLI_FASTBOOT_BODY -->
+
+<script type="text/javascript">
+    // try to detect embedding when needed
+    if (!window.STEPIC_IS_EMBEDDED) {
+      try {
+        window.STEPIC_IS_EMBEDDED = window.self !== window.top;
+      } catch (e) {
+        // old IE and FF fails with "same origin" errors
+        window.STEPIC_IS_EMBEDDED = true;
+      }
+    }
+</script>
+
+<script>
+  STEPIC_BUILD_VERSION = 1604946520;
+  STEPIC_BUILD_TAG = '188.0.12413';
+  STEPIC_SENTRY_DSN = 'https://847d1d9c4c25464db135715240b411e9@sentry.stepik.org/8';
+
+  __stepik_shoebox__ = JSON.parse('{\u0022courses\u0022: [{\u0022id\u0022: 63054, \u0022summary\u0022: \u0022\u005Cu041f\u005Cu043e\u005Cu0441\u005Cu043b\u005Cu0435 \u005Cu0437\u005Cu0430\u005Cu0432\u005Cu0435\u005Cu0440\u005Cu0448\u005Cu0435\u005Cu043d\u005Cu0438\u005Cu044f \u005Cu043a\u005Cu0443\u005Cu0440\u005Cu0441\u005Cu0430 \u005Cu0443\u005Cu0447\u005Cu0430\u005Cu0449\u005Cu0438\u005Cu0435\u005Cu0441\u005Cu044f \u005Cu043d\u005Cu0430\u005Cu0443\u005Cu0447\u005Cu0430\u005Cu0442\u005Cu0441\u005Cu044f \u005Cu043f\u005Cu0440\u005Cu043e\u005Cu0435\u005Cu043a\u005Cu0442\u005Cu0438\u005Cu0440\u005Cu043e\u005Cu0432\u005Cu0430\u005Cu0442\u005Cu044c \u005Cu0438 \u005Cu0441\u005Cu043e\u005Cu0437\u005Cu0434\u005Cu0430\u005Cu0432\u005Cu0430\u005Cu0442\u005Cu044c \u005Cu0440\u005Cu0435\u005Cu043b\u005Cu044f\u005Cu0446\u005Cu0438\u005Cu043e\u005Cu043d\u005Cu043d\u005Cu044b\u005Cu0435 \u005Cu0431\u005Cu0430\u005Cu0437\u005Cu044b \u005Cu0434\u005Cu0430\u005Cu043d\u005Cu043d\u005Cu044b\u005Cu0445, \u005Cu0438\u005Cu0437\u005Cu0443\u005Cu0447\u005Cu0430\u005Cu0442 \u005Cu0440\u005Cu0430\u005Cu0437\u005Cu043b\u005Cu0438\u005Cu0447\u005Cu043d\u005Cu044b\u005Cu0435 \u005Cu0442\u005Cu0438\u005Cu043f\u005Cu044b SQL\u002D\u005Cu0437\u005Cu0430\u005Cu043f\u005Cu0440\u005Cu043e\u005Cu0441\u005Cu043e\u005Cu0432, \u005Cu0440\u005Cu0430\u005Cu0437\u005Cu0431\u005Cu0435\u005Cu0440\u005Cu0443\u005Cu0442\u005Cu0441\u005Cu044f, \u005Cu043a\u005Cu0430\u005Cu043a \u005Cu0444\u005Cu043e\u005Cu0440\u005Cu043c\u005Cu0443\u005Cu043b\u005Cu0438\u005Cu0440\u005Cu043e\u005Cu0432\u005Cu0430\u005Cu0442\u005Cu044c, \u005Cu0441\u005Cu043e\u005Cu0437\u005Cu0434\u005Cu0430\u005Cu0432\u005Cu0430\u005Cu0442\u005Cu044c \u005Cu0438 \u005Cu043e\u005Cu0442\u005Cu043b\u005Cu0430\u005Cu0436\u005Cu0438\u005Cu0432\u005Cu0430\u005Cu0442\u005Cu044c \u005Cu0437\u005Cu0430\u005Cu043f\u005Cu0440\u005Cu043e\u005Cu0441\u005Cu044b SQL.\u0022, \u0022workload\u0022: \u0022\u005Cu041d\u005Cu0435 \u005Cu043c\u005Cu0435\u005Cu043d\u005Cu0435\u005Cu0435 24 \u005Cu0447\u005Cu0430\u005Cu0441\u005Cu043e\u005Cu0432\u0022, \u0022cover\u0022: \u0022/media/cache/images/courses/63054/cover_9LJEWOD/0ed8d534d60516b9f6269c99efb85ba1.jpg\u0022, \u0022intro\u0022: \u0022\u0022, \u0022course_format\u0022: \u0022\u0022, \u0022target_audience\u0022: \u0022\u005Cu041a\u005Cu0443\u005Cu0440\u005Cu0441 \u005Cu043f\u005Cu043e\u005Cu0434\u005Cu0445\u005Cu043e\u005Cu0434\u005Cu0438\u005Cu0442 \u005Cu043a\u005Cu0430\u005Cu043a \u005Cu0434\u005Cu043b\u005Cu044f \u005Cu0442\u005Cu0435\u005Cu0445, \u005Cu043a\u005Cu0442\u005Cu043e \u005Cu043d\u005Cu0430\u005Cu0447\u005Cu0438\u005Cu043d\u005Cu0430\u005Cu0435\u005Cu0442 \u005Cu0438\u005Cu0437\u005Cu0443\u005Cu0447\u005Cu0430\u005Cu0442\u005Cu044c SQL \u005Cu0438 \u005Cu0431\u005Cu0430\u005Cu0437\u005Cu044b \u005Cu0434\u005Cu0430\u005Cu043d\u005Cu043d\u005Cu044b\u005Cu0445, \u005Cu0442\u005Cu0430\u005Cu043a \u005Cu0438 \u005Cu0434\u005Cu043b\u005Cu044f \u005Cu0442\u005Cu0435\u005Cu0445, \u005Cu043a\u005Cu0442\u005Cu043e \u005Cu0445\u005Cu043e\u005Cu0447\u005Cu0435\u005Cu0442 \u005Cu0430\u005Cu043a\u005Cu0442\u005Cu0443\u005Cu0430\u005Cu043b\u005Cu0438\u005Cu0437\u005Cu0438\u005Cu0440\u005Cu043e\u005Cu0432\u005Cu0430\u005Cu0442\u005Cu044c \u005Cu0441\u005Cu0432\u005Cu043e\u005Cu0438 \u005Cu0437\u005Cu043d\u005Cu0430\u005Cu043d\u005Cu0438\u005Cu044f.\u0022, \u0022certificate_footer\u0022: null, \u0022certificate_cover_org\u0022: \u0022/media/courses/63054/certificate_cover_org_EqRFBgY.png\u0022, \u0022is_certificate_issued\u0022: true, \u0022is_certificate_auto_issued\u0022: true, \u0022certificate_regular_threshold\u0022: 125, \u0022certificate_distinction_threshold\u0022: 142, \u0022instructors\u0022: [73379201], \u0022certificate\u0022: \u0022\u0022, \u0022requirements\u0022: \u0022\u0022, \u0022description\u0022: \u0022\u003Cp\u003E\u005Cu0412 \u005Cu043a\u005Cu0443\u005Cu0440\u005Cu0441\u005Cu0435 \u005Cu0431\u005Cu043e\u005Cu043b\u005Cu044c\u005Cu0448\u005Cu0438\u005Cu043d\u005Cu0441\u005Cu0442\u005Cu0432\u005Cu043e \u005Cu0448\u005Cu0430\u005Cu0433\u005Cu043e\u005Cu0432 \u005Cu2014\u005Cu00a0\u005Cu044d\u005Cu0442\u005Cu043e \u005Cu043f\u005Cu0440\u005Cu0430\u005Cu043a\u005Cu0442\u005Cu0438\u005Cu0447\u005Cu0435\u005Cu0441\u005Cu043a\u005Cu0438\u005Cu0435 \u005Cu0437\u005Cu0430\u005Cu0434\u005Cu0430\u005Cu043d\u005Cu0438\u005Cu044f \u005Cu043d\u005Cu0430 \u005Cu0441\u005Cu043e\u005Cu0437\u005Cu0434\u005Cu0430\u005Cu043d\u005Cu0438\u005Cu0435 SQL\u002D\u005Cu0437\u005Cu0430\u005Cu043f\u005Cu0440\u005Cu043e\u005Cu0441\u005Cu043e\u005Cu0432. \u005Cu041a\u005Cu0430\u005Cu0436\u005Cu0434\u005Cu044b\u005Cu0439 \u005Cu0448\u005Cu0430\u005Cu0433 \u005Cu0432\u005Cu043a\u005Cu043b\u005Cu044e\u005Cu0447\u005Cu0430\u005Cu0435\u005Cu0442\u005Cu00a0 \u005Cu043c\u005Cu0438\u005Cu043d\u005Cu0438\u005Cu043c\u005Cu0430\u005Cu043b\u005Cu044c\u005Cu043d\u005Cu044b\u005Cu0435 \u005Cu0442\u005Cu0435\u005Cu043e\u005Cu0440\u005Cu0435\u005Cu0442\u005Cu0438\u005Cu0447\u005Cu0435\u005Cu0441\u005Cu043a\u005Cu0438\u005Cu0435 \u005Cu0430\u005Cu0441\u005Cu043f\u005Cu0435\u005Cu043a\u005Cu0442\u005Cu044b \u005Cu043f\u005Cu043e \u005Cu0431\u005Cu0430\u005Cu0437\u005Cu0430\u005Cu043c \u005Cu0434\u005Cu0430\u005Cu043d\u005Cu043d\u005Cu044b\u005Cu0445 \u005Cu0438\u005Cu043b\u005Cu0438 \u005Cu044f\u005Cu0437\u005Cu044b\u005Cu043a\u005Cu0443 SQL, \u005Cu043f\u005Cu0440\u005Cu0438\u005Cu043c\u005Cu0435\u005Cu0440\u005Cu044b \u005Cu043f\u005Cu043e\u005Cu0445\u005Cu043e\u005Cu0436\u005Cu0438\u005Cu0445 \u005Cu0437\u005Cu0430\u005Cu043f\u005Cu0440\u005Cu043e\u005Cu0441\u005Cu043e\u005Cu0432 \u005Cu0438 \u005Cu043f\u005Cu043e\u005Cu044f\u005Cu0441\u005Cu043d\u005Cu0435\u005Cu043d\u005Cu0438\u005Cu0435 \u005Cu043a \u005Cu0440\u005Cu0435\u005Cu0430\u005Cu043b\u005Cu0438\u005Cu0437\u005Cu0430\u005Cu0446\u005Cu0438\u005Cu0438.\u003C/p\u003E\u005Cr\u005Cn\u005Cr\u005Cn\u003Cp\u003E\u005Cu0414\u005Cu043b\u005Cu044f \u005Cu0441\u005Cu043e\u005Cu0437\u005Cu0434\u005Cu0430\u005Cu043d\u005Cu0438\u005Cu044f, \u005Cu0432\u005Cu044b\u005Cu043f\u005Cu043e\u005Cu043b\u005Cu043d\u005Cu0435\u005Cu043d\u005Cu0438\u005Cu044f \u005Cu0438 \u005Cu043e\u005Cu0442\u005Cu043b\u005Cu0430\u005Cu0434\u005Cu043a\u005Cu0438 SQL\u002D\u005Cu0437\u005Cu0430\u005Cu043f\u005Cu0440\u005Cu043e\u005Cu0441\u005Cu043e\u005Cu0432 \u005Cu0438\u005Cu0441\u005Cu043f\u005Cu043e\u005Cu043b\u005Cu044c\u005Cu0437\u005Cu0443\u005Cu0435\u005Cu0442\u005Cu0441\u005Cu044f \u005Cu043f\u005Cu043b\u005Cu0430\u005Cu0442\u005Cu0444\u005Cu043e\u005Cu0440\u005Cu043c\u005Cu0430 Stepik, \u005Cu043d\u005Cu0430 \u005Cu0441\u005Cu0432\u005Cu043e\u005Cu0439 \u005Cu043a\u005Cu043e\u005Cu043c\u005Cu043f\u005Cu044c\u005Cu044e\u005Cu0442\u005Cu0435\u005Cu0440 \u005Cu043d\u005Cu0438\u005Cu0447\u005Cu0435\u005Cu0433\u005Cu043e \u005Cu0434\u005Cu043e\u005Cu043f\u005Cu043e\u005Cu043b\u005Cu043d\u005Cu0438\u005Cu0442\u005Cu0435\u005Cu043b\u005Cu044c\u005Cu043d\u005Cu043e \u005Cu0443\u005Cu0441\u005Cu0442\u005Cu0430\u005Cu043d\u005Cu0430\u005Cu0432\u005Cu043b\u005Cu0438\u005Cu0432\u005Cu0430\u005Cu0442\u005Cu044c \u005Cu043d\u005Cu0435 \u005Cu043d\u005Cu0430\u005Cu0434\u005Cu043e.\u003C/p\u003E\u005Cr\u005Cn\u005Cr\u005Cn\u003Cp\u003E\u005Cu0421\u005Cu043b\u005Cu043e\u005Cu0436\u005Cu043d\u005Cu043e\u005Cu0441\u005Cu0442\u005Cu044c \u005Cu0437\u005Cu0430\u005Cu043f\u005Cu0440\u005Cu043e\u005Cu0441\u005Cu043e\u005Cu0432 \u005Cu0432\u005Cu043e\u005Cu0437\u005Cu0440\u005Cu0430\u005Cu0441\u005Cu0442\u005Cu0430\u005Cu0435\u005Cu0442 \u005Cu043f\u005Cu043e \u005Cu043c\u005Cu0435\u005Cu0440\u005Cu0435 \u005Cu043f\u005Cu0440\u005Cu043e\u005Cu0445\u005Cu043e\u005Cu0436\u005Cu0434\u005Cu0435\u005Cu043d\u005Cu0438\u005Cu044f \u005Cu043a\u005Cu0443\u005Cu0440\u005Cu0441\u005Cu0430. \u005Cu0421\u005Cu043d\u005Cu0430\u005Cu0447\u005Cu0430\u005Cu043b\u005Cu0430 \u005Cu043e\u005Cu043d\u005Cu0438 \u005Cu0444\u005Cu043e\u005Cu0440\u005Cu043c\u005Cu0443\u005Cu043b\u005Cu0438\u005Cu0440\u005Cu0443\u005Cu044e\u005Cu0442\u005Cu0441\u005Cu044f \u005Cu0434\u005Cu043b\u005Cu044f \u005Cu043e\u005Cu0442\u005Cu0434\u005Cu0435\u005Cu043b\u005Cu044c\u005Cu043d\u005Cu044b\u005Cu0445 \u005Cu0442\u005Cu0430\u005Cu0431\u005Cu043b\u005Cu0438\u005Cu0446, \u005Cu0430 \u005Cu0437\u005Cu0430\u005Cu0442\u005Cu0435\u005Cu043c \u005Cu0434\u005Cu043b\u005Cu044f \u005Cu0431\u005Cu0430\u005Cu0437 \u005Cu0434\u005Cu0430\u005Cu043d\u005Cu043d\u005Cu044b\u005Cu0445, \u005Cu0440\u005Cu0430\u005Cu0437\u005Cu0440\u005Cu0430\u005Cu0431\u005Cu043e\u005Cu0442\u005Cu0430\u005Cu043d\u005Cu043d\u005Cu044b\u005Cu0445 \u005Cu0434\u005Cu043b\u005Cu044f \u005Cu043f\u005Cu0440\u005Cu0435\u005Cu0434\u005Cu043c\u005Cu0435\u005Cu0442\u005Cu043d\u005Cu044b\u005Cu0445 \u005Cu043e\u005Cu0431\u005Cu043b\u005Cu0430\u005Cu0441\u005Cu0442\u005Cu0435\u005Cu0439, \u005Cu0442\u005Cu0430\u005Cu043a\u005Cu0438\u005Cu0445 \u005Cu043a\u005Cu0430\u005Cu043a \u005C\u0022\u005Cu0418\u005Cu043d\u005Cu0442\u005Cu0435\u005Cu0440\u005Cu043d\u005Cu0435\u005Cu0442\u002D\u005Cu043c\u005Cu0430\u005Cu0433\u005Cu0430\u005Cu0437\u005Cu0438\u005Cu043d\u005C\u0022, \u005C\u0022\u005Cu0422\u005Cu0435\u005Cu0441\u005Cu0442\u005Cu0438\u005Cu0440\u005Cu043e\u005Cu0432\u005Cu0430\u005Cu043d\u005Cu0438\u005Cu0435\u005C\u0022, \u005C\u0022\u005Cu0410\u005Cu0431\u005Cu0438\u005Cu0442\u005Cu0443\u005Cu0440\u005Cu0438\u005Cu0435\u005Cu043d\u005Cu0442\u005C\u0022. \u005Cu041f\u005Cu0440\u005Cu0438\u005Cu0447\u005Cu0435\u005Cu043c \u005Cu0432 \u005Cu043f\u005Cu0440\u005Cu043e\u005Cu0446\u005Cu0435\u005Cu0441\u005Cu0441\u005Cu0435 \u005Cu0432\u005Cu044b\u005Cu043f\u005Cu043e\u005Cu043b\u005Cu043d\u005Cu0435\u005Cu043d\u005Cu0438\u005Cu044f\u005Cu00a0\u005Cu0448\u005Cu0430\u005Cu0433\u005Cu043e\u005Cu0432 \u005Cu043a\u005Cu0443\u005Cu0440\u005Cu0441\u005Cu0430 \u005Cu0440\u005Cu0435\u005Cu0448\u005Cu0430\u005Cu044e\u005Cu0442\u005Cu0441\u005Cu044f \u005Cu043f\u005Cu0440\u005Cu0430\u005Cu043a\u005Cu0442\u005Cu0438\u005Cu0447\u005Cu0435\u005Cu0441\u005Cu043a\u005Cu0438\u005Cu0435 \u005Cu0437\u005Cu0430\u005Cu0434\u005Cu0430\u005Cu0447\u005Cu0438 \u005Cu0438\u005Cu0437 \u005Cu0432\u005Cu044b\u005Cu0431\u005Cu0440\u005Cu0430\u005Cu043d\u005Cu043d\u005Cu043e\u005Cu0439 \u005Cu043f\u005Cu0440\u005Cu0435\u005Cu0434\u005Cu043c\u005Cu0435\u005Cu0442\u005Cu043d\u005Cu043e\u005Cu0439 \u005Cu043e\u005Cu0431\u005Cu043b\u005Cu0430\u005Cu0441\u005Cu0442\u005Cu0438.\u003C/p\u003E\u005Cr\u005Cn\u005Cr\u005Cn\u003Cp\u003E\u005Cu041a\u005Cu0430\u005Cu0436\u005Cu0434\u005Cu044b\u005Cu0439 \u005Cu0443\u005Cu0447\u005Cu0430\u005Cu0449\u005Cu0438\u005Cu0439\u005Cu0441\u005Cu044f \u005Cu043c\u005Cu043e\u005Cu0436\u005Cu0435\u005Cu0442 \u005Cu043f\u005Cu0440\u005Cu0438\u005Cu0434\u005Cu0443\u005Cu043c\u005Cu0430\u005Cu0442\u005Cu044c \u005Cu0441\u005Cu0432\u005Cu043e\u005Cu0438 \u005Cu0437\u005Cu0430\u005Cu0434\u005Cu0430\u005Cu043d\u005Cu0438\u005Cu044f \u005Cu043d\u005Cu0430 \u005Cu0441\u005Cu043e\u005Cu0437\u005Cu0434\u005Cu0430\u005Cu043d\u005Cu0438\u005Cu0435 SQL\u002D\u005Cu0437\u005Cu0430\u005Cu043f\u005Cu0440\u005Cu043e\u005Cu0441\u005Cu043e\u005Cu0432. \u005Cu0412 \u005Cu043a\u005Cu0443\u005Cu0440\u005Cu0441\u005Cu0435 \u005Cu0435\u005Cu0441\u005Cu0442\u005Cu044c \u005Cu043c\u005Cu043e\u005Cu0434\u005Cu0443\u005Cu043b\u005Cu044c, \u005Cu0432 \u005Cu043a\u005Cu043e\u005Cu0442\u005Cu043e\u005Cu0440\u005Cu043e\u005Cu043c \u005Cu0431\u005Cu0443\u005Cu0434\u005Cu0443\u005Cu0442 \u005Cu0440\u005Cu0430\u005Cu0437\u005Cu043c\u005Cu0435\u005Cu0449\u005Cu0430\u005Cu0442\u005Cu044c\u005Cu0441\u005Cu044f \u005Cu043b\u005Cu0443\u005Cu0447\u005Cu0448\u005Cu0438\u005Cu0435 \u005Cu0438\u005Cu0437 \u005Cu043d\u005Cu0438\u005Cu0445.\u003C/p\u003E\u005Cr\u005Cn\u005Cr\u005Cn\u003Cp\u003E\u005Cu0414\u005Cu0430\u005Cu043d\u005Cu043d\u005Cu044b\u005Cu0439 \u005Cu043a\u005Cu0443\u005Cu0440\u005Cu0441 \u005Cu043d\u005Cu0430\u005Cu043f\u005Cu0440\u005Cu0430\u005Cu0432\u005Cu043b\u005Cu0435\u005Cu043d \u005Cu043d\u005Cu0430 \u005Cu0442\u005Cu043e, \u005Cu0447\u005Cu0442\u005Cu043e\u005Cu0431\u005Cu044b \u005Cu043d\u005Cu0430\u005Cu0443\u005Cu0447\u005Cu0438\u005Cu0442\u005Cu044c \u005Cu0441\u005Cu043b\u005Cu0443\u005Cu0448\u005Cu0430\u005Cu0442\u005Cu0435\u005Cu043b\u005Cu044f \u005Cu0441\u005Cu043e\u005Cu0437\u005Cu0434\u005Cu0430\u005Cu0432\u005Cu0430\u005Cu0442\u005Cu044c \u005Cu0431\u005Cu0430\u005Cu0437\u005Cu044b \u005Cu0434\u005Cu0430\u005Cu043d\u005Cu043d\u005Cu044b\u005Cu0445 \u005Cu0438 \u005Cu0440\u005Cu0435\u005Cu0430\u005Cu043b\u005Cu0438\u005Cu0437\u005Cu043e\u005Cu0432\u005Cu044b\u005Cu0432\u005Cu0430\u005Cu0442\u005Cu044c \u005Cu0437\u005Cu0430\u005Cu043f\u005Cu0440\u005Cu043e\u005Cu0441\u005Cu044b \u005Cu043a \u005Cu043d\u005Cu0438\u005Cu043c \u005Cu043d\u005Cu0430 \u005Cu044f\u005Cu0437\u005Cu044b\u005Cu043a\u005Cu0435 SQL\u005Cu00a0 \u005Cu0434\u005Cu043b\u005Cu044f \u005Cu0440\u005Cu0430\u005Cu0437\u005Cu043b\u005Cu0438\u005Cu0447\u005Cu043d\u005Cu044b\u005Cu0445 \u005Cu043f\u005Cu0440\u005Cu0435\u005Cu0434\u005Cu043c\u005Cu0435\u005Cu0442\u005Cu043d\u005Cu044b\u005Cu0445 \u005Cu043e\u005Cu0431\u005Cu043b\u005Cu0430\u005Cu0441\u005Cu0442\u005Cu0435\u005Cu0439.\u003C/p\u003E\u005Cr\u005Cn\u005Cr\u005Cn\u003Cp\u003E\u005Cu00a0\u003C/p\u003E\u005Cr\u005Cn\u005Cr\u005Cn\u003Ch3\u003E\u005Cu041f\u005Cu0440\u005Cu0435\u005Cu043f\u005Cu043e\u005Cu0434\u005Cu0430\u005Cu0432\u005Cu0430\u005Cu0442\u005Cu0435\u005Cu043b\u005Cu044c \u005Cu043a\u005Cu0443\u005Cu0440\u005Cu0441\u005Cu0430\u003C/h3\u003E\u005Cr\u005Cn\u005Cr\u005Cn\u003Cp\u003E\u003Cstrong\u003E\u005Cu041e\u005Cu0437\u005Cu0435\u005Cu0440\u005Cu043e\u005Cu0432\u005Cu0430 \u005Cu0413\u005Cu0430\u005Cu043b\u005Cu0438\u005Cu043d\u005Cu0430 \u005Cu041f\u005Cu0430\u005Cu0432\u005Cu043b\u005Cu043e\u005Cu0432\u005Cu043d\u005Cu0430\u003C/strong\u003E\u003C/p\u003E\u005Cr\u005Cn\u005Cr\u005Cn\u003Cp\u003E\u003Cimg alt\u003D\u005C\u0022\u005C\u0022 height\u003D\u005C\u0022212\u005C\u0022 src\u003D\u005C\u0022https://ucarecdn.com/e9e6700d\u002De187\u002D4edf\u002D83da\u002D050fa2f2c8ae/\u005C\u0022 width\u003D\u005C\u0022159\u005C\u0022\u003E\u003C/p\u003E\u005Cr\u005Cn\u005Cr\u005Cn\u003Cp\u003E\u005Cu0414\u005Cu043e\u005Cu0446\u005Cu0435\u005Cu043d\u005Cu0442 \u005Cu043a\u005Cu0430\u005Cu0444\u005Cu0435\u005Cu0434\u005Cu0440\u005Cu044b \u005Cu043c\u005Cu0435\u005Cu0445\u005Cu0430\u005Cu043d\u005Cu0438\u005Cu043a\u005Cu0438 \u005Cu0438 \u005Cu043c\u005Cu0430\u005Cu0442\u005Cu0435\u005Cu043c\u005Cu0430\u005Cu0442\u005Cu0438\u005Cu0447\u005Cu0435\u005Cu0441\u005Cu043a\u005Cu043e\u005Cu0433\u005Cu043e \u005Cu043c\u005Cu043e\u005Cu0434\u005Cu0435\u005Cu043b\u005Cu0438\u005Cu0440\u005Cu043e\u005Cu0432\u005Cu0430\u005Cu043d\u005Cu0438\u005Cu044f \u005Cu0414\u005Cu0412\u005Cu0424\u005Cu0423, \u005Cu0440\u005Cu0443\u005Cu043a\u005Cu043e\u005Cu0432\u005Cu043e\u005Cu0434\u005Cu0438\u005Cu0442\u005Cu0435\u005Cu043b\u005Cu044c \u005Cu043e\u005Cu0431\u005Cu0440\u005Cu0430\u005Cu0437\u005Cu043e\u005Cu0432\u005Cu0430\u005Cu0442\u005Cu0435\u005Cu043b\u005Cu044c\u005Cu043d\u005Cu043e\u005Cu0439 \u005Cu043f\u005Cu0440\u005Cu043e\u005Cu0433\u005Cu0440\u005Cu0430\u005Cu043c\u005Cu043c\u005Cu044b \u005Cu00ab\u005Cu041f\u005Cu0440\u005Cu0438\u005Cu043a\u005Cu043b\u005Cu0430\u005Cu0434\u005Cu043d\u005Cu0430\u005Cu044f \u005Cu043c\u005Cu0435\u005Cu0445\u005Cu0430\u005Cu043d\u005Cu0438\u005Cu043a\u005Cu0430\u005Cu00bb. \u005Cu0418\u005Cu043c\u005Cu0435\u005Cu044e \u005Cu0441\u005Cu0442\u005Cu0435\u005Cu043f\u005Cu0435\u005Cu043d\u005Cu044c \u005Cu043a\u005Cu0430\u005Cu043d\u005Cu0434\u005Cu0438\u005Cu0434\u005Cu0430\u005Cu0442\u005Cu0430 \u005Cu0442\u005Cu0435\u005Cu0445\u005Cu043d\u005Cu0438\u005Cu0447\u005Cu0435\u005Cu0441\u005Cu043a\u005Cu0438\u005Cu0445 \u005Cu043d\u005Cu0430\u005Cu0443\u005Cu043a, \u005Cu0430 \u005Cu0442\u005Cu0430\u005Cu043a\u005Cu0436\u005Cu0435 \u005Cu0431\u005Cu0430\u005Cu0437\u005Cu043e\u005Cu0432\u005Cu043e\u005Cu0435 \u005Cu043c\u005Cu0430\u005Cu0442\u005Cu0435\u005Cu043c\u005Cu0430\u005Cu0442\u005Cu0438\u005Cu0447\u005Cu0435\u005Cu0441\u005Cu043a\u005Cu043e\u005Cu0435 \u005Cu043e\u005Cu0431\u005Cu0440\u005Cu0430\u005Cu0437\u005Cu043e\u005Cu0432\u005Cu0430\u005Cu043d\u005Cu0438\u005Cu0435 \u005Cu2013 \u005Cu0432 1987 \u005Cu0433\u005Cu043e\u005Cu0434\u005Cu0443 \u005Cu043e\u005Cu043a\u005Cu043e\u005Cu043d\u005Cu0447\u005Cu0438\u005Cu043b\u005Cu0430 \u005Cu0412\u005Cu043e\u005Cu0440\u005Cu043e\u005Cu043d\u005Cu0435\u005Cu0436\u005Cu0441\u005Cu043a\u005Cu0438\u005Cu0439 \u005Cu0433\u005Cu043e\u005Cu0441\u005Cu0443\u005Cu0434\u005Cu0430\u005Cu0440\u005Cu0441\u005Cu0442\u005Cu0432\u005Cu0435\u005Cu043d\u005Cu043d\u005Cu044b\u005Cu0439 \u005Cu0443\u005Cu043d\u005Cu0438\u005Cu0432\u005Cu0435\u005Cu0440\u005Cu0441\u005Cu0438\u005Cu0442\u005Cu0435\u005Cu0442 \u005Cu043f\u005Cu043e \u005Cu0441\u005Cu043f\u005Cu0435\u005Cu0446\u005Cu0438\u005Cu0430\u005Cu043b\u005Cu044c\u005Cu043d\u005Cu043e\u005Cu0441\u005Cu0442\u005Cu0438 \u005Cu00ab\u005Cu041f\u005Cu0440\u005Cu0438\u005Cu043a\u005Cu043b\u005Cu0430\u005Cu0434\u005Cu043d\u005Cu0430\u005Cu044f \u005Cu043c\u005Cu0430\u005Cu0442\u005Cu0435\u005Cu043c\u005Cu0430\u005Cu0442\u005Cu0438\u005Cu043a\u005Cu0430\u005Cu00bb.\u003C/p\u003E\u005Cr\u005Cn\u005Cr\u005Cn\u003Cp\u003E\u005Cu041b\u005Cu044e\u005Cu0431\u005Cu043b\u005Cu044e \u005Cu0441\u005Cu0432\u005Cu043e\u005Cu044e \u005Cu0440\u005Cu0430\u005Cu0431\u005Cu043e\u005Cu0442\u005Cu0443, \u005Cu043c\u005Cu043d\u005Cu043e\u005Cu0433\u005Cu043e \u005Cu043b\u005Cu0435\u005Cu0442 \u005Cu043f\u005Cu0440\u005Cu0435\u005Cu043f\u005Cu043e\u005Cu0434\u005Cu0430\u005Cu044e \u005Cu0434\u005Cu0438\u005Cu0441\u005Cu0446\u005Cu0438\u005Cu043f\u005Cu043b\u005Cu0438\u005Cu043d\u005Cu044b \u005Cu043f\u005Cu043e \u005Cu043f\u005Cu0440\u005Cu043e\u005Cu0433\u005Cu0440\u005Cu0430\u005Cu043c\u005Cu043c\u005Cu0438\u005Cu0440\u005Cu043e\u005Cu0432\u005Cu0430\u005Cu043d\u005Cu0438\u005Cu044e \u005Cu0438 \u005Cu0431\u005Cu0430\u005Cu0437\u005Cu0430\u005Cu043c \u005Cu0434\u005Cu0430\u005Cu043d\u005Cu043d\u005Cu044b\u005Cu0445 \u005Cu0432 \u005Cu0443\u005Cu043d\u005Cu0438\u005Cu0432\u005Cu0435\u005Cu0440\u005Cu0441\u005Cu0438\u005Cu0442\u005Cu0435\u005Cu0442\u005Cu0435. \u005Cu0421\u005Cu0444\u005Cu0435\u005Cu0440\u005Cu0430 \u005Cu043d\u005Cu0430\u005Cu0443\u005Cu0447\u005Cu043d\u005Cu044b\u005Cu0445 \u005Cu0438\u005Cu043d\u005Cu0442\u005Cu0435\u005Cu0440\u005Cu0435\u005Cu0441\u005Cu043e\u005Cu0432: e\u002DLearning, learning analytics, \u005Cu043c\u005Cu0430\u005Cu0448\u005Cu0438\u005Cu043d\u005Cu043d\u005Cu043e\u005Cu0435 \u005Cu043e\u005Cu0431\u005Cu0443\u005Cu0447\u005Cu0435\u005Cu043d\u005Cu0438\u005Cu0435, \u005Cu0441\u005Cu0442\u005Cu043e\u005Cu0445\u005Cu0430\u005Cu0441\u005Cu0442\u005Cu0438\u005Cu0447\u005Cu0435\u005Cu0441\u005Cu043a\u005Cu043e\u005Cu0435 \u005Cu043c\u005Cu043e\u005Cu0434\u005Cu0435\u005Cu043b\u005Cu0438\u005Cu0440\u005Cu043e\u005Cu0432\u005Cu0430\u005Cu043d\u005Cu0438\u005Cu0435.\u003C/p\u003E\u0022, \u0022sections\u0022: [112676, 116799, 117358, 118501], \u0022total_units\u0022: 22, \u0022enrollment\u0022: null, \u0022is_favorite\u0022: false, \u0022actions\u0022: {\u0022view_reports\u0022: {\u0022enabled\u0022: false, \u0022needs_permission\u0022: \u0022teach\u0022}, \u0022edit_reports\u0022: {\u0022enabled\u0022: false, \u0022needs_permission\u0022: \u0022teach\u0022}, \u0022view_grade_book_page\u0022: {\u0022enabled\u0022: false, \u0022needs_permission\u0022: \u0022assist\u0022}, \u0022view_grade_book\u0022: {\u0022enabled\u0022: false, \u0022needs_permission\u0022: \u0022assist\u0022}, \u0022edit_lti\u0022: {\u0022enabled\u0022: false, \u0022needs_permission\u0022: \u0022admin\u0022}, \u0022edit_advanced_settings\u0022: {\u0022enabled\u0022: false, \u0022needs_permission\u0022: \u0022teach\u0022}, \u0022manage_permissions\u0022: {\u0022enabled\u0022: false, \u0022needs_permission\u0022: \u0022admin\u0022}}, \u0022progress\u0022: null, \u0022first_lesson\u0022: 297508, \u0022first_unit\u0022: 279268, \u0022certificate_link\u0022: null, \u0022certificate_regular_link\u0022: null, \u0022certificate_distinction_link\u0022: null, \u0022referral_link\u0022: null, \u0022schedule_link\u0022: null, \u0022schedule_long_link\u0022: null, \u0022first_deadline\u0022: null, \u0022last_deadline\u0022: null, \u0022subscriptions\u0022: [\u002231\u002D78\u002D63054\u0022, \u002230\u002D78\u002D63054\u0022], \u0022announcements\u0022: [], \u0022is_contest\u0022: false, \u0022is_self_paced\u0022: true, \u0022is_adaptive\u0022: false, \u0022is_idea_compatible\u0022: false, \u0022last_step\u0022: \u002278\u002D63054\u0022, \u0022intro_video\u0022: null, \u0022social_providers\u0022: [], \u0022authors\u0022: [73379201], \u0022tags\u0022: [], \u0022has_tutors\u0022: false, \u0022is_enabled\u0022: true, \u0022is_proctored\u0022: false, \u0022proctor_url\u0022: null, \u0022review_summary\u0022: 62602, \u0022schedule_type\u0022: \u0022self_paced\u0022, \u0022certificates_count\u0022: 1335, \u0022learners_count\u0022: 23759, \u0022lessons_count\u0022: 22, \u0022quizzes_count\u0022: 10, \u0022challenges_count\u0022: 172, \u0022peer_reviews_count\u0022: 0, \u0022instructor_reviews_count\u0022: 0, \u0022videos_duration\u0022: 0, \u0022time_to_complete\u0022: 160154, \u0022is_popular\u0022: true, \u0022is_unsuitable\u0022: false, \u0022is_paid\u0022: false, \u0022price\u0022: null, \u0022currency_code\u0022: null, \u0022display_price\u0022: \u0022\u002D\u0022, \u0022continue_url\u0022: \u0022/course/63054/continue\u0022, \u0022readiness\u0022: 1.0, \u0022is_archived\u0022: false, \u0022options\u0022: {}, \u0022price_tier\u0022: null, \u0022position\u0022: 1, \u0022is_censored\u0022: false, \u0022difficulty\u0022: null, \u0022acquired_skills\u0022: [], \u0022acquired_assets\u0022: [], \u0022learning_format\u0022: \u0022\u0022, \u0022content_details\u0022: [], \u0022issue\u0022: null, \u0022course_type\u0022: \u0022enterprise\u0022, \u0022possible_type\u0022: null, \u0022is_certificate_with_score\u0022: false, \u0022paid_features\u0022: [], \u0022preview_lesson\u0022: null, \u0022preview_unit\u0022: null, \u0022possible_currencies\u0022: [], \u0022commission_basic\u0022: null, \u0022commission_promo\u0022: null, \u0022with_certificate\u0022: true, \u0022owner\u0022: 73379201, \u0022language\u0022: \u0022ru\u0022, \u0022is_featured\u0022: true, \u0022is_public\u0022: true, \u0022title\u0022: \u0022\u005Cu0418\u005Cu043d\u005Cu0442\u005Cu0435\u005Cu0440\u005Cu0430\u005Cu043a\u005Cu0442\u005Cu0438\u005Cu0432\u005Cu043d\u005Cu044b\u005Cu0439 \u005Cu0442\u005Cu0440\u005Cu0435\u005Cu043d\u005Cu0430\u005Cu0436\u005Cu0435\u005Cu0440 \u005Cu043f\u005Cu043e SQL\u0022, \u0022slug\u0022: \u0022\u005Cu0418\u005Cu043d\u005Cu0442\u005Cu0435\u005Cu0440\u005Cu0430\u005Cu043a\u005Cu0442\u005Cu0438\u005Cu0432\u005Cu043d\u005Cu044b\u005Cu0439\u002D\u005Cu0442\u005Cu0440\u005Cu0435\u005Cu043d\u005Cu0430\u005Cu0436\u005Cu0435\u005Cu0440\u002D\u005Cu043f\u005Cu043e\u002DSQL\u002D63054\u0022, \u0022begin_date\u0022: \u00222020\u002D04\u002D01T02:00:00Z\u0022, \u0022end_date\u0022: null, \u0022soft_deadline\u0022: null, \u0022hard_deadline\u0022: null, \u0022grading_policy\u0022: \u0022halved\u0022, \u0022begin_date_source\u0022: \u00222020\u002D04\u002D01T02:00:00Z\u0022, \u0022end_date_source\u0022: null, \u0022soft_deadline_source\u0022: null, \u0022hard_deadline_source\u0022: null, \u0022grading_policy_source\u0022: \u0022halved\u0022, \u0022is_active\u0022: true, \u0022create_date\u0022: \u00222020\u002D01\u002D09T02:14:17Z\u0022, \u0022update_date\u0022: \u00222020\u002D11\u002D14T05:32:33Z\u0022, \u0022learners_group\u0022: null, \u0022testers_group\u0022: null, \u0022moderators_group\u0022: null, \u0022assistants_group\u0022: null, \u0022teachers_group\u0022: null, \u0022admins_group\u0022: null, \u0022discussions_count\u0022: 0, \u0022discussion_proxy\u0022: null, \u0022discussion_threads\u0022: [], \u0022lti_consumer_key\u0022: \u0022\u0022, \u0022lti_secret_key\u0022: \u0022\u0022, \u0022lti_private_profile\u0022: false}], \u0022course\u002Dreview\u002Dsummaries\u0022: [{\u0022id\u0022: 62602, \u0022course\u0022: 63054, \u0022average\u0022: 4.97422680412371, \u0022count\u0022: 194, \u0022distribution\u0022: [0, 0, 0, 5, 189]}], \u0022stepics\u0022: [{\u0022id\u0022: 1, \u0022total_quizzes\u0022: 818180, \u0022total_active\u0022: 151311, \u0022total_submissions\u0022: 320970089, \u0022user\u0022: 318794451, \u0022profile\u0022: 318794451, \u0022config\u0022: {\u0022project_name\u0022: \u0022Stepik\u0022, \u0022language\u0022: null, \u0022favicon\u0022: \u0022/static/classic/ico/favicon.ico\u0022, \u0022topbar_logo\u0022: \u0022/static/frontend/topbar_logo.svg\u0022, \u0022topbar_logo_small\u0022: \u0022/static/frontend/topbar_logo_small.svg\u0022, \u0022footer_logo\u0022: \u0022\u0022, \u0022index_logo\u0022: \u0022\u0022, \u0022index_text\u0022: \u0022\u0022, \u0022is_standard_footer\u0022: true, \u0022is_standard_explore\u0022: true, \u0022is_standard_index\u0022: true, \u0022is_full_profile\u0022: true, \u0022has_extra_favicons\u0022: true, \u0022has_language_selector\u0022: true, \u0022has_lessons_in_navbar\u0022: true, \u0022has_registration_link\u0022: true, \u0022has_course_review_tab\u0022: true, \u0022has_activity_graph\u0022: true, \u0022has_mobile_apps_banner\u0022: true, \u0022has_email_verification_alert\u0022: true, \u0022has_social_sharing\u0022: true, \u0022login_link\u0022: \u0022/login\u0022, \u0022is_public_social_accounts\u0022: true, \u0022can_set_password\u0022: true, \u0022can_change_name\u0022: true, \u0022can_change_email\u0022: true, \u0022can_change_language\u0022: true, \u0022can_change_city\u0022: true, \u0022cdn_url\u0022: \u0022https://stepik.azureedge.net\u0022, \u0022course_reviews_passed_percent\u0022: 80, \u0022courses_default_publicity\u0022: true, \u0022telegram_bot_name\u0022: \u0022StepicBot\u0022, \u0022is_public_telegram_bot\u0022: true, \u0022stripe_api_public_key\u0022: \u0022pk_live_vTMgNYTvMxpmKA0pN0ZQYoHT\u0022, \u0022project_help_center_url\u0022: \u0022http://support.stepik.org\u0022, \u0022project_domain\u0022: \u0022stepik.org\u0022, \u0022project_main_instance_url\u0022: \u0022https://stepik.org/\u0022, \u0022project_support_email\u0022: \u0022support@stepik.org\u0022, \u0022email_verify_warn_delay\u0022: 259200, \u0022enable_recommended_courses_for_users\u0022: [\u0022135091\u0022, \u002243329\u0022, \u002215557637\u0022], \u0022classes_description_urls\u0022: {\u0022ru\u0022: \u0022http://welcome.stepik.org/ru/class\u0022, \u0022en\u0022: \u0022https://welcome.stepik.org/en/classroom\u0022}}, \u0022server_time\u0022: 1605359224.148749}], \u0022users\u0022: [{\u0022id\u0022: 318794451, \u0022profile\u0022: 318794451, \u0022is_private\u0022: false, \u0022is_active\u0022: true, \u0022is_guest\u0022: true, \u0022is_organization\u0022: false, \u0022short_bio\u0022: \u0022\u0022, \u0022details\u0022: \u0022\u0022, \u0022first_name\u0022: \u0022Anonymous\u0022, \u0022last_name\u0022: \u0022318794451\u0022, \u0022full_name\u0022: \u0022Anonymous 318794451\u0022, \u0022alias\u0022: null, \u0022avatar\u0022: \u0022https://stepik.org/users/318794451/77475474523bb9eed26906e8363f8501a990fdbf/avatar.svg\u0022, \u0022cover\u0022: null, \u0022city\u0022: null, \u0022knowledge\u0022: 0, \u0022knowledge_rank\u0022: null, \u0022reputation\u0022: 0, \u0022reputation_rank\u0022: null, \u0022join_date\u0022: null, \u0022social_profiles\u0022: [], \u0022solved_steps_count\u0022: 0, \u0022created_courses_count\u0022: 0, \u0022created_lessons_count\u0022: 0, \u0022issued_certificates_count\u0022: 0, \u0022followers_count\u0022: 0}], \u0022profiles\u0022: [{\u0022id\u0022: 318794451, \u0022first_name\u0022: \u0022\u0022, \u0022last_name\u0022: \u0022\u0022, \u0022full_name\u0022: \u0022Anonymous 318794451\u0022, \u0022is_private\u0022: false, \u0022avatar\u0022: \u0022https://stepik.org/users/318794451/77475474523bb9eed26906e8363f8501a990fdbf/avatar.svg\u0022, \u0022language\u0022: \u0022en\u0022, \u0022city\u0022: null, \u0022short_bio\u0022: \u0022\u0022, \u0022details\u0022: \u0022\u0022, \u0022subscribed_for_mail\u0022: false, \u0022notification_email_delay\u0022: \u00225m\u0022, \u0022notification_status\u0022: 318794451, \u0022is_staff\u0022: false, \u0022is_guest\u0022: true, \u0022can_add_lesson\u0022: false, \u0022can_add_course\u0022: false, \u0022can_add_group\u0022: false, \u0022subscribed_for_marketing\u0022: false, \u0022subscribed_for_partners\u0022: false, \u0022subscribed_for_news_en\u0022: true, \u0022subscribed_for_news_ru\u0022: false, \u0022bit_field\u0022: 0, \u0022level_abilities\u0022: [], \u0022has_password\u0022: false, \u0022social_accounts\u0022: [], \u0022email_addresses\u0022: [], \u0022is_email_verified\u0022: false, \u0022telegram_bot_url\u0022: \u0022https://telegram.me/StepicBot?start\u003DTXpFNE56azBORFV4OjFrZHZHaTpxRGR5M25mOHlvU1IwLUEwRS0zY0lHdXJTODQ\u0022, \u0022subscription_plan\u0022: null, \u0022experiment_choices\u0022: {}, \u0022allowed_pro_courses_count\u0022: 0, \u0022is_web_push_enabled\u0022: true, \u0022is_vote_notifications_enabled\u0022: true, \u0022last_login\u0022: \u00222020\u002D11\u002D14T13:04:02Z\u0022, \u0022ww_is_approved\u0022: false, \u0022ru_is_approved\u0022: false}]}');
+</script>
+
+
+  <div class="mobile-banner" role="alert" hidden>
+  <picture class="mobile-banner__phone-center"
+           style="width: 400px"
+           aria-hidden="true">
+    
+      <source type="image/webp" data-srcset="/static/frontend/mobile-banner/back-2-en.webp">
+      <source data-srcset="/static/frontend/mobile-banner/back-2-en.png">
+      <img data-src="/static/frontend/mobile-banner/back-2-en.png">
+    
+  </picture>
+
+  <picture class="mobile-banner__phone-leftbottom"
+           style="width: 90px"
+           aria-hidden="true">
+    <source type="image/webp" data-srcset="/static/frontend/mobile-banner/back-1.webp">
+    <source data-srcset="/static/frontend/mobile-banner/back-1.png">
+    <img data-src="/static/frontend/mobile-banner/back-1.png">
+  </picture>
+
+  <picture class="mobile-banner__phone-righttop"
+           style="width: 133px"
+           aria-hidden="true">
+    <source type="image/webp" data-srcset="/static/frontend/mobile-banner/back-3.webp">
+    <source data-srcset="/static/frontend/mobile-banner/back-3.png">
+    <img data-src="/static/frontend/mobile-banner/back-3.png">
+  </picture>
+
+  <header class="mobile-banner__header">
+    <img class="mobile-banner__logo"
+         data-src="/static/frontend/mobile-banner/stepik_logotype_square_black.svg"
+         aria-hidden="true">
+    <h1 class="mobile-banner__title">
+      
+        Download <br>any course
+      
+    </h1>
+  </header>
+
+  <div class="mobile-banner__buttons">
+    <a target="_blank"
+       rel="noopener noreferrer"
+       class="mobile-banner__main-link">
+      
+        Open app
+      
+    </a>
+
+    <br>
+
+    <button class="st-button_style_none mobile-banner__close-button">
+      
+        or continue in a web browser
+      
+    </button>
+  </div>
+</div>
+
+  <script>
+// NOTE: this script executes for guests only. See index.djhtml for details.
+(function() {
+  // NOTE: the key is not very good, but still is used for backward compatibility.
+  let STORAGE_KEY = 'stepic:never_showed_fancy_mobileapp_banner';
+
+  let banner_element = document.querySelector('.mobile-banner');
+  if (!banner_element) {
+    throw new Error('Unable to find element ".mobile-banner"');
+  }
+
+  let supported_platforms = [{
+    // Android.
+    test: () => navigator.userAgent.search(/(Android)\s+([\d.]+)/) > -1,
+    app_link: 'https://play.google.com/store/apps/details?id=org.stepic.droid'
+  }, {
+    // IOS.
+    test: () => /iPad|iPhone|iPod/.test(navigator.platform),
+    app_link: 'https://itunes.apple.com/app/id1064581926'
+  }];
+
+  let platform_data = supported_platforms.find(p => p.test());
+
+  if (!shouldShowBanner()) {
+    destroy();
+    return;
+  }
+
+  show();
+
+  let close_btn = document.querySelector('.mobile-banner__close-button');
+  close_btn.addEventListener('click', function() {
+    turnOffBannerNextTime();
+    destroy();
+  });
+
+  let main_link = document.querySelector('.mobile-banner__main-link');
+  main_link.href = platform_data.app_link;
+  main_link.addEventListener('click', function() {
+    turnOffBannerNextTime();
+  });
+
+  function shouldShowBanner() {
+    if (!platform_data) {
+      return false;
+    }
+
+    if (window.STEPIC_IS_EMBEDDED) {
+      return false;
+    }
+
+    if (location.search.includes('from_mobile_app')) {
+      return false;
+    }
+
+    if (location.pathname.startsWith('/course/')) {
+      let shoebox = window.__stepik_shoebox__;
+      let courseIsPaid = (shoebox
+                          && shoebox.courses
+                          && shoebox.courses.length === 1
+                          && shoebox.courses[0].is_paid);
+      if (courseIsPaid) {
+        return false;
+      }
+    }
+
+    let blacklist_paths = [
+      /^\/course\/[0-9]+\/pay($|\/|\?)/,
+      /^\/login\?next=\/invitation\//,
+      /^\/join-class\//
+    ];
+
+    let location_path = location.pathname + location.search;
+    if (blacklist_paths.some(regex => regex.test(location_path))) {
+      return false;
+    }
+
+    try {
+      let was_not_shown = localStorage.getItem(STORAGE_KEY);
+      switch (was_not_shown) {
+        case 'false':
+          return false;
+
+        case 'true':
+        case null:
+        default:
+          return true;
+      }
+    } catch(e) {
+      // localStorage is not available.
+      return true;
+    }
+  }
+
+  function turnOffBannerNextTime() {
+    try {
+      let was_not_shown = false;
+      localStorage.setItem(STORAGE_KEY, was_not_shown);
+    } catch(e) {
+      // localStorage is not available.
+    }
+  }
+
+  function show() {
+    // Set src and srcset attributes to load images lazily
+    // (see EDY-9344 for details).
+    let imgElements = banner_element.querySelectorAll('source, img');
+    for (let i = 0; i < imgElements.length; i++) {
+      let img = imgElements[i];
+      if (img.dataset.src) {
+        img.src = img.dataset.src;
+      }
+
+      if (img.dataset.srcset) {
+        img.srcset = img.dataset.srcset;
+      }
+    }
+
+    // Finally, unhide the banner.
+    banner_element.hidden = false;
+  }
+
+  function destroy() {
+    banner_element.parentNode.removeChild(banner_element);
+  }
+})();
+
+</script>
+
+
+<div data-onload-remove>
+  
+    <div data-route="course-promo" id="ex-body">
+<script id="fastboot-body-start" type="x/boundary"></script><div class="ember-view" id="ember6825"><!-- -->
+<div class="stepic-application" data-fastboot="">
+<div class="loading-slider ember-view" id="ember6827"></div>
+<div class=" stepic-application__inner">
+<div class="woof-container ember-view" id="ember6828"><!-- --></div>
+<header class="main-header no-print">
+<!-- -->
+<nav aria-label="Site navigation" class="navbar">
+<a class="navbar__logo-link ember-link ember-view" href="/" id="ember6829"> <picture>
+<source media="(max-width: 1024px)" srcset="/static/frontend/topbar_logo_small.svg">
+<img alt="Stepik logo" class="navbar__logo" src="/static/frontend/topbar_logo.svg"/>
+</source></picture>
+</a>
+<!-- -->
+<ul class="navbar__links">
+<li class="navbar__menu-item">
+<a class="navbar__link st-link ember-link ember-view" href="/catalog" id="ember6830">            Catalog
+</a> </li>
+<!-- -->
+<li class="navbar__menu-item">
+<a class="navbar__link st-link ember-link ember-view" href="/new-course" id="ember6831">              Teach
+</a> </li>
+</ul>
+<div id="main-header-slot"></div>
+<div class="navbar__spacer"></div>
+<form class="navbar__search-form">
+<div class="ember-view" id="ember6832"><span class="with-autocomplete ember-view" id="ember6833"><div class="with-autocomplete__drop-down drop-down drop-down-menu ember-view" id="ember6834"><div aria-expanded="false" aria-haspopup="true" class="drop-down__toggler drop-down-toggler ember-view" id="ember6835"> <div class="with-autocomplete__content">
+<div class="navbar__search-wrapper st-input-wrapper st-input-wrapper_border-none st-input-wrapper_type-search">
+<input aria-label="Search" class="navbar__search-input st-input st-input_border_none" placeholder="Search" type="search" value=""/>
+</div>
+</div>
+</div>
+<!-- -->
+<!-- --></div></span></div>
+</form>
+<div class="language-selector drop-down drop-down-menu ember-view" id="ember6837"><div aria-expanded="false" aria-haspopup="true" class="drop-down__toggler drop-down-toggler drop-down-toggler--auto-toggle ember-view" id="ember6838"> <button class="navbar__submenu-toggler st-button_style_none">
+        English
+        <span class="navbar__down-arrow svg-icon down-arrow_icon ember-view" id="ember6839"><svg xmlns="http://www.w3.org/2000/svg">
+<use xlink:href="/assets/icons.svg#down-arrow"></use>
+</svg></span>
+</button>
+</div>
+<!-- -->
+<!-- --></div>
+<div class="navbar__divider"></div>
+<a class="navbar__auth navbar__auth_login st-link st-link_style_button ember-link ember-view" href="/course/63054/promo?auth=login" id="ember6840">          Log in
+</a>
+<a class="navbar__auth navbar__auth_reg st-link st-link_style_button ember-link ember-view" href="/course/63054/promo?auth=registration" id="ember6841">            Register
+</a> </nav>
+</header>
+<!-- -->
+<div class="row">
+<!-- -->
+</div>
+<main>
+<section class="course-promo__head">
+<div class="page-fragment">
+<div class="course-promo__head-content">
+<h1 class="course-promo__header">Интерактивный тренажер по SQL</h1>
+<p class="course-promo__summary">
+</p><div class="shortened-text ember-view" id="ember6842">  После завершения курса учащиеся научатся проектировать и создавать реляционные базы данных, изучат различные типы SQL-запросов, разберутся, как формулировать, создавать и отлаживать запросы SQL.
+
+<!-- --></div>
+<div class="course-promo__head-widgets">
+<!-- -->
+<div class="course-promo__head-widget" data-type="workload">
+<span class="svg-icon clock_icon svg-icon_inline ember-view" id="ember6843"><svg xmlns="http://www.w3.org/2000/svg">
+<use xlink:href="/assets/icons.svg#clock"></use>
+</svg></span>
+            Не менее 24 часов
+          </div>
+<div class="course-promo__head-widget" data-type="certificate">
+<span class="svg-icon diploma_icon svg-icon_inline ember-view" id="ember6844"><svg xmlns="http://www.w3.org/2000/svg">
+<use xlink:href="/assets/icons.svg#diploma"></use>
+</svg></span>
+            Certificate Stepik
+          </div>
+<!-- --> </div>
+</div>
+<aside class="course-promo__head-aside">
+<!-- -->
+<div class="course-promo__review-summary course-promo-summary ember-view" id="ember6845"><!-- --> <div class="course-promo-summary__students">
+    23,738 learners
+  </div>
+</div>
+</aside>
+</div>
+</section>
+<section class="course-promo__main">
+<div class="page-fragment">
+<article class="course-promo__main-content">
+<!-- -->
+<!-- -->
+<section class="course-promo__content-block">
+<h2>About this course</h2>
+<div class="course-promo__description html-content rich-text-viewer ember-view" id="ember6846"><span><p>В курсе большинство шагов — это практические задания на создание SQL-запросов. Каждый шаг включает  минимальные теоретические аспекты по базам данных или языку SQL, примеры похожих запросов и пояснение к реализации.</p>
+<p>Для создания, выполнения и отладки SQL-запросов используется платформа Stepik, на свой компьютер ничего дополнительно устанавливать не надо.</p>
+<p>Сложность запросов возрастает по мере прохождения курса. Сначала они формулируются для отдельных таблиц, а затем для баз данных, разработанных для предметных областей, таких как "Интернет-магазин", "Тестирование", "Абитуриент". Причем в процессе выполнения шагов курса решаются практические задачи из выбранной предметной области.</p>
+<p>Каждый учащийся может придумать свои задания на создание SQL-запросов. В курсе есть модуль, в котором будут размещаться лучшие из них.</p>
+<p>Данный курс направлен на то, чтобы научить слушателя создавать базы данных и реализовывать запросы к ним на языке SQL  для различных предметных областей.</p>
+<p> </p>
+<h3>Преподаватель курса</h3>
+<p><strong>Озерова Галина Павловна</strong></p>
+<p><img alt="" height="212" src="https://ucarecdn.com/e9e6700d-e187-4edf-83da-050fa2f2c8ae/" width="159"/></p>
+<p>Доцент кафедры механики и математического моделирования ДВФУ, руководитель образовательной программы «Прикладная механика». Имею степень кандидата технических наук, а также базовое математическое образование – в 1987 году окончила Воронежский государственный университет по специальности «Прикладная математика».</p>
+<p>Люблю свою работу, много лет преподаю дисциплины по программированию и базам данных в университете. Сфера научных интересов: e-Learning, learning analytics, машинное обучение, стохастическое моделирование.</p></span></div>
+</section>
+<section class="course-promo__content-block">
+<h2>Who is this course for</h2>
+<p class="html-content rich-text-viewer ember-view" id="ember6847"><span>Курс подходит как для тех, кто начинает изучать SQL и базы данных, так и для тех, кто хочет актуализировать свои знания.</span></p>
+<!-- --> </section>
+<section class="course-promo__content-block">
+<h2>Meet the Instructors</h2>
+<div class="course-promo__instructor-list">
+<div class="course-promo__instructor author-widget ember-view" id="ember6849"><img alt="User picture" class="author-widget__avatar" data-square="" style="width: 82px; height: 82px;"/>
+<div class="author-widget__content">
+<a class="author-widget__name ember-link ember-view" href="/users/73379201" id="ember6850">
+</a>
+<!-- -->
+<!-- --></div>
+</div>
+</div>
+</section>
+<!-- -->
+<section class="course-promo__content-block">
+<a class="anchor" name="toc"></a>
+<h2>Course content</h2>
+<div class="course-promo__syllabus toc-promo ember-view" id="ember6851"><div class="course-toc ember-view" id="ember6852"> <div class="stepic__loader loader ">
+<svg class="lds-squaricle loader__block" height="75" preserveaspectratio="xMidYMid" style="background:none" viewbox="0 0 100 100" width="75" xmlns="http://www.w3.org/2000/svg"><g transform="translate(50 50)"><g transform="scale(.73935)"><animatetransform attributename="transform" begin="0s" calcmode="spline" dur="1.7s" keysplines="0.5 0 0.5 1;0.5 0 0.5 1" keytimes="0;0.5;1" repeatcount="indefinite" type="scale" values="0.8;0.5;0.8"></animatetransform><rect class="loader__spinner" fill="#000000" height="90" rx="16.67" stroke="#000000" stroke-width="5" transform="rotate(54.58)" width="90" x="-45" y="-45"><animate attributename="rx" begin="0s" calcmode="linear" dur="1.7" keytimes="0;0.5;1" repeatcount="indefinite" values="0;50;0"></animate><animate attributename="stroke-width" begin="0s" calcmode="linear" dur="1.7" keytimes="0;0.5;1" repeatcount="indefinite" values="5;15;5"></animate><animatetransform attributename="transform" begin="0s" calcmode="spline" dur="1.7s" keysplines="0.5 0 0.5 1;0.5 0 0.5 1" keytimes="0;0.5;1" repeatcount="indefinite" type="rotate" values="0 0 0;270 0 0;540 0 0"></animatetransform></rect></g></g><g stroke="null"><path class="loader__logo" d="M55.72 63.73c-1.44 1.44-3.44 2.32-5.68 2.32-2.24 0-4.32-.96-5.84-2.4l3.84-3.84c.48.5 1.2.8 2 .8s1.44-.3 2-.8l7.77-7.7c.5-.5.8-1.2.8-2s-.3-1.42-.8-2c-.4-.5-1.2-.8-2-.8s-1.4.3-2 .8l-7.7 7.78c-1.5 1.53-3.5 2.4-5.82 2.4s-4.32-.95-5.84-2.4c-1.52-1.5-2.4-3.5-2.4-5.83s.96-4.32 2.4-5.84l7.77-7.77c1.5-1.54 3.5-2.4 5.83-2.4s4.3.95 5.83 2.4L52 40.2c-.48-.5-1.2-.8-2-.8s-1.44.3-2 .8l-7.77 7.76c-.5.48-.8 1.2-.8 2s.3 1.44.8 2c.47.48 1.2.8 2 .8s1.44-.32 2-.8L52 44.22c1.5-1.52 3.5-2.4 5.83-2.4s4.33.96 5.85 2.4c1.52 1.52 2.4 3.52 2.4 5.84 0 2.24-.96 4.32-2.4 5.84l-7.93 7.85z" fill="#FFF"></path></g></svg>
+<h6 class="loader__msg">loading...</h6>
+</div>
+</div></div>
+</section>
+<section class="course-promo__content-block course-promo__certificate-section">
+<h3>Certificate</h3>
+<div>
+            Certificate Stepik
+          </div>
+</section>
+<!-- -->
+<!-- -->
+<section class="course-promo__content-block">
+<!-- -->
+<div class="course-promo__enrollment course-promo-enrollment ember-view" id="ember6854"> <div class="course-promo-enrollment__price-container">
+<span class="course-promo-enrollment__price course-promo-enrollment__price_free">
+      Free
+    </span>
+</div>
+<div class="course-promo-enrollment__actions">
+<div class="course-promo-enrollment__join course-join-button ember-view" id="ember6855"> <button class="button button_with-loader course-promo-enrollment__join-btn">
+          Join this course
+    </button>
+</div>
+<!-- --></div>
+</div>
+</section>
+<section class="course-promo__content-block">
+<h2>Share this course</h2>
+<div class="course-promo__share-btns share-buttons ember-view" id="ember6857">  http://10.1.65.192:4000/course/63054/promo
+</div>
+<div class="course-promo__share-url">
+          Direct link:
+          <br/>
+<a href="http://10.1.65.192:4000/63054">http://10.1.65.192:4000/63054</a>
+</div>
+</section>
+</article>
+<aside class="course-promo__main-aside">
+<div class="course-promo__aside-sticky-wrapper">
+<div class="course-promo__enrollment course-promo__enrollment_aside course-promo-enrollment ember-view" id="ember6858"> <div class="course-promo-enrollment__price-container">
+<span class="course-promo-enrollment__price course-promo-enrollment__price_free">
+      Free
+    </span>
+</div>
+<div class="course-promo-enrollment__actions">
+<div class="course-promo-enrollment__join course-join-button ember-view" id="ember6859"> <button class="button button_with-loader course-promo-enrollment__join-btn">
+          Join this course
+    </button>
+</div>
+<!-- --></div>
+</div>
+<div class="course-promo__deadlines course-promo__deadlines_aside course-deadlines ember-view" id="ember6861"> <div class="course-deadlines__learn-now">
+      You can learn right away
+    </div>
+</div>
+<div class="course-promo__course-includes-aside course-promo-includes">
+<h4>This course includes</h4>
+<ul>
+<li>
+<b>22</b> lessons
+            </li>
+<!-- -->
+<li>
+<b>10</b> quizzes
+              </li>
+<li>
+<b>172</b> interactive challenges
+              </li>
+</ul>
+<a href="#toc">
+              Course content
+            </a>
+<div class="course-promo-includes__update-date">
+            Last update 11/14/2020
+          </div>
+</div>
+</div>
+</aside>
+</div>
+</section>
+<!-- -->
+<!-- -->
+<!-- -->
+</main>
+<!-- -->
+<!-- --> </div>
+<footer class="page-footer page-footer-modern page_footer ember-view" id="ember6862"><div class="page-footer__container">
+<div class="page-footer__row">
+<div class="page-footer__col page-footer__terms">
+<div class="page-footer__years">
+          © 2013 — 2020. Stepik
+        </div>
+<a href="https://welcome.stepik.org/en/terms" rel="noopener noreferrer" target="_blank">Terms of service</a> and <a href="https://welcome.stepik.org/en/privacy" rel="noopener noreferrer" target="_blank">privacy policy</a>
+</div>
+<div class="page-footer__col page-footer__lists">
+<ul class="page-footer__col page-footer__list">
+<li>
+<a href="https://welcome.stepik.org/en/pricing" rel="noopener noreferrer" target="_blank">Pricing</a>
+</li>
+<li>
+<a href="http://support.stepik.org/hc/en-us" rel="noopener noreferrer" target="_blank">Help Center</a>
+</li>
+<li>
+<a href="https://welcome.stepik.org/en/contacts" rel="noopener noreferrer" target="_blank">Contacts</a>
+</li>
+<!-- --> </ul>
+<ul class="page-footer__col page-footer__list">
+<li>
+<a href="https://welcome.stepik.org/en/about" rel="noopener noreferrer" target="_blank">About Stepik</a>
+</li>
+<li>
+<a href="https://welcome.stepik.org/en/team" rel="noopener noreferrer" target="_blank">Team</a>
+</li>
+<!-- --> <li>
+<a href="https://welcome.stepik.org/en/press" rel="noopener noreferrer" target="_blank">Press</a>
+</li>
+</ul>
+<ul class="page-footer__col page-footer__counters page-footer__list">
+<li title="Number of submissions on Stepik">
+<strong>320,533,342</strong> submissions
+          </li>
+</ul>
+</div>
+<div class="page-footer__col page-footer__social-links">
+<a class="page-footer__social-link" href="https://facebook.com/stepikorg" rel="noopener noreferrer" target="_blank">
+<span class="svg-icon footer-fb_icon ember-view" id="ember6863"><svg xmlns="http://www.w3.org/2000/svg">
+<use xlink:href="/assets/icons.svg#footer-fb"></use>
+</svg></span>
+</a>
+</div>
+</div>
+<div class="page-footer__row page-footer__row_order_second ">
+<div class="page-footer__col page-footer__apps">
+<a class="page-footer__mobapp-link" href="https://itunes.apple.com/app/id1064581926" rel="noopener noreferrer" target="_blank">
+<span class="app-store svg-icon app-store-en_icon ember-view" id="ember6864"><svg xmlns="http://www.w3.org/2000/svg">
+<use xlink:href="/assets/icons.svg#app-store-en"></use>
+</svg></span>
+</a>
+<a class="page-footer__mobapp-link" href="https://play.google.com/store/apps/details?id=org.stepic.droid" rel="noopener noreferrer" target="_blank">
+<img alt="Get it on Google Play" src="/static/frontend/google-play-badge-en.png"/>
+</a>
+</div>
+<div class="page-footer__col page-footer__CC-note">
+        Public user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener noreferrer" target="_blank">CC BY-SA 4.0</a> license with attribution required
+      </div>
+</div>
+<div aria-hidden="true" class="page-footer__build-info" title="Build info:
+- tag n/a
+- date n/a
+- package 0.0.0+7a577d5f">
+        0.0.0+7a577d5f
+      </div>
+</div>
+<span aria-hidden="true" class="page-footer__ab-group">
+<!-- --><!-- --></span>
+</footer>
+<div id="context_menu"></div>
+<div class="loading-overlay-container ember-view" id="ember6866"><!-- --></div>
+</div>
+<div class="upgrade-course-modal-dialog modal-popup ember-view" id="ember6867"><!-- --></div></div><script id="shoebox-main-store" type="fastboot/shoebox">{"records":{"stepics":[{"id":"1","config":{"project_name":"Stepik","language":null,"favicon":"/static/classic/ico/favicon.ico","topbar_logo":"/static/frontend/topbar_logo.svg","topbar_logo_small":"/static/frontend/topbar_logo_small.svg","footer_logo":"","index_logo":"","index_text":"","is_standard_footer":true,"is_standard_explore":true,"is_standard_index":true,"is_full_profile":true,"has_extra_favicons":true,"has_language_selector":true,"has_lessons_in_navbar":true,"has_registration_link":true,"has_course_review_tab":true,"has_activity_graph":true,"has_mobile_apps_banner":true,"has_email_verification_alert":true,"has_social_sharing":true,"login_link":"/login","is_public_social_accounts":true,"can_set_password":true,"can_change_name":true,"can_change_email":true,"can_change_language":true,"can_change_city":true,"cdn_url":"https://stepik.azureedge.net","course_reviews_passed_percent":80,"courses_default_publicity":true,"telegram_bot_name":"StepicBot","is_public_telegram_bot":true,"stripe_api_public_key":"pk_live_vTMgNYTvMxpmKA0pN0ZQYoHT","project_help_center_url":"http://support.stepik.org","project_domain":"stepik.org","project_main_instance_url":"https://stepik.org/","project_support_email":"support@stepik.org","email_verify_warn_delay":259200,"enable_recommended_courses_for_users":["135091","43329","15557637"],"classes_description_urls":{"ru":"http://welcome.stepik.org/ru/class","en":"https://welcome.stepik.org/en/classroom"}},"total_active":151311,"total_quizzes":817624,"total_submissions":320533342,"server_time":1605349443.21577,"profile":"292847547","user":"292847547"}],"users":[{"id":"292847547","avatar":"https://stepik.org/users/292847547/30422e754baded41345d38230fc3841f5af205dd/avatar.svg","details":"","cover":null,"alias":null,"first_name":"Anonymous","full_name":"Anonymous 292847547","is_active":true,"is_guest":true,"is_private":false,"is_organization":false,"join_date":null,"knowledge":0,"knowledge_rank":null,"last_name":"292847547","profile_url":null,"reputation":0,"reputation_rank":null,"short_bio":"","issued_certificates_count":0,"created_courses_count":0,"created_lessons_count":0,"solved_steps_count":1,"followers_count":0,"city":null,"profile":"292847547","social_profiles":[]}],"profiles":[{"id":"292847547","avatar":"https://stepik.org/users/292847547/30422e754baded41345d38230fc3841f5af205dd/avatar.svg","bit_field":4294967295,"can_add_course":false,"can_add_group":false,"can_add_lesson":false,"details":"","first_name":"","full_name":"Anonymous 292847547","has_password":false,"is_email_verified":false,"is_guest":true,"is_private":false,"is_staff":false,"language":"en","last_name":"","level_abilities":[],"notification_email_delay":"5m","short_bio":"","subscribed_for_mail":false,"is_web_push_enabled":true,"is_vote_notifications_enabled":true,"subscribed_for_news_en":true,"subscribed_for_news_ru":false,"subscribed_for_marketing":false,"subscribed_for_partners":false,"telegram_bot_url":"https://telegram.me/StepicBot?start=TWpreU9EUTNOVFEzOjFrZHNpeDppM2IyeWRZbm15Tkw2eDhLRmZudHM3RnlidzQ","experiment_choices":{},"allowed_pro_courses_count":0,"last_login":"2020-11-14T10:24:03.178Z","city":null,"user":"292847547","email_addresses":[],"notification_status":"292847547","subscription_plan":null,"social_accounts":[]}],"notification-statuses":[{"id":"292847547","comments":0,"default":0,"learn":0,"review":0,"teach":0}],"courses":[{"id":"63054","begin_date":"2020-04-01T02:00:00.000Z","begin_date_source":"2020-04-01T02:00:00.000Z","end_date":null,"end_date_source":null,"grading_policy":"halved","grading_policy_source":"halved","hard_deadline":null,"hard_deadline_source":null,"soft_deadline":null,"soft_deadline_source":null,"has_progress":false,"progress_id":null,"discussions_count":0,"actions":{"view_reports":{"enabled":false,"needs_permission":"teach","reasons":["needs_permission:teach"],"reason":"needs_permission:teach"},"edit_reports":{"enabled":false,"needs_permission":"teach","reasons":["needs_permission:teach"],"reason":"needs_permission:teach"},"view_grade_book_page":{"enabled":false,"needs_permission":"assist","reasons":["needs_permission:assist"],"reason":"needs_permission:assist"},"view_grade_book":{"enabled":false,"needs_permission":"assist","reasons":["needs_permission:assist"],"reason":"needs_permission:assist"},"edit_lti":{"enabled":false,"needs_permission":"admin","reasons":["needs_permission:admin"],"reason":"needs_permission:admin"},"edit_advanced_settings":{"enabled":false,"needs_permission":"teach","reasons":["needs_permission:teach"],"reason":"needs_permission:teach"},"manage_permissions":{"enabled":false,"needs_permission":"admin","reasons":["needs_permission:admin"],"reason":"needs_permission:admin"}},"acquired_skills":[],"acquired_assets":[],"learning_format":"","content_details":[],"announcements_ids":[],"certificate":"","certificate_cover_org":"/media/courses/63054/certificate_cover_org_EqRFBgY.png","certificate_distinction_link":null,"certificate_distinction_threshold":142,"certificate_footer":null,"certificate_link":null,"certificate_regular_link":null,"certificate_regular_threshold":125,"course_format":"","course_type":"enterprise","cover":"/media/cache/images/courses/63054/cover_9LJEWOD/0ed8d534d60516b9f6269c99efb85ba1.jpg","description":"\u003cp\u003eВ курсе большинство шагов — это практические задания на создание SQL-запросов. Каждый шаг включает  минимальные теоретические аспекты по базам данных или языку SQL, примеры похожих запросов и пояснение к реализации.\u003c/p\u003e\r\n\r\n\u003cp\u003eДля создания, выполнения и отладки SQL-запросов используется платформа Stepik, на свой компьютер ничего дополнительно устанавливать не надо.\u003c/p\u003e\r\n\r\n\u003cp\u003eСложность запросов возрастает по мере прохождения курса. Сначала они формулируются для отдельных таблиц, а затем для баз данных, разработанных для предметных областей, таких как \"Интернет-магазин\", \"Тестирование\", \"Абитуриент\". Причем в процессе выполнения шагов курса решаются практические задачи из выбранной предметной области.\u003c/p\u003e\r\n\r\n\u003cp\u003eКаждый учащийся может придумать свои задания на создание SQL-запросов. В курсе есть модуль, в котором будут размещаться лучшие из них.\u003c/p\u003e\r\n\r\n\u003cp\u003eДанный курс направлен на то, чтобы научить слушателя создавать базы данных и реализовывать запросы к ним на языке SQL  для различных предметных областей.\u003c/p\u003e\r\n\r\n\u003cp\u003e \u003c/p\u003e\r\n\r\n\u003ch3\u003eПреподаватель курса\u003c/h3\u003e\r\n\r\n\u003cp\u003e\u003cstrong\u003eОзерова Галина Павловна\u003c/strong\u003e\u003c/p\u003e\r\n\r\n\u003cp\u003e\u003cimg alt=\"\" height=\"212\" src=\"https://ucarecdn.com/e9e6700d-e187-4edf-83da-050fa2f2c8ae/\" width=\"159\"\u003e\u003c/p\u003e\r\n\r\n\u003cp\u003eДоцент кафедры механики и математического моделирования ДВФУ, руководитель образовательной программы «Прикладная механика». Имею степень кандидата технических наук, а также базовое математическое образование – в 1987 году окончила Воронежский государственный университет по специальности «Прикладная математика».\u003c/p\u003e\r\n\r\n\u003cp\u003eЛюблю свою работу, много лет преподаю дисциплины по программированию и базам данных в университете. Сфера научных интересов: e-Learning, learning analytics, машинное обучение, стохастическое моделирование.\u003c/p\u003e","difficulty":null,"first_deadline":null,"intro":"","intro_video":null,"is_adaptive":false,"with_certificate":true,"is_certificate_issued":true,"is_certificate_auto_issued":true,"is_certificate_with_score":false,"is_contest":false,"is_enabled":true,"is_archived":false,"is_favorite":false,"is_featured":true,"is_proctored":false,"is_public":true,"is_self_paced":true,"language":"ru","last_deadline":null,"owner_id":"73379201","readiness":1,"requirements":"","requirements_literature":null,"schedule_link":null,"schedule_long_link":null,"schedule_type":"self_paced","sections_ids":[112676,116799,117358,118501],"slug":"Интерактивный-тренажер-по-SQL-63054","summary":"После завершения курса учащиеся научатся проектировать и создавать реляционные базы данных, изучат различные типы SQL-запросов, разберутся, как формулировать, создавать и отлаживать запросы SQL.","tags_ids":[],"target_audience":"Курс подходит как для тех, кто начинает изучать SQL и базы данных, так и для тех, кто хочет актуализировать свои знания.","time_to_complete":160170,"title":"Интерактивный тренажер по SQL","total_units":22,"update_date":"2020-11-14T05:32:33.000Z","workload":"Не менее 24 часов","learners_count":23738,"certificates_count":1331,"lti_consumer_key":"","lti_secret_key":"","lti_private_profile":false,"is_paid":false,"price":null,"currency_code":null,"display_price":"-","continue_url":"/course/63054/continue","options":{},"possible_type":null,"possible_currencies":[],"commission_basic":null,"commission_promo":null,"lessons_count":22,"quizzes_count":10,"challenges_count":172,"videos_duration":0,"instructor_reviews_count":0,"progress":null,"discussion_proxy":null,"discussion_threads":[],"first_lesson":"297508","first_unit":"279268","issue":null,"announcements":[],"authors":["73379201"],"enrollment":null,"instructors":["73379201"],"last_step":"78-63054","owner":"73379201","sections":["112676","116799","117358","118501"],"tags":[],"review_summary":"62602","learners_group":null,"testers_group":null,"moderators_group":null,"teachers_group":null,"assistants_group":null,"admins_group":null,"preview_lesson":null,"preview_unit":null}],"enrollments":[],"sections":[],"course-review-summaries":[]}}</script><script id="shoebox-adapter-queries" type="fastboot/shoebox">{}</script><script id="shoebox-fetch-requests" type="fastboot/shoebox">{}</script><script id="fastboot-body-end" type="x/boundary"></script>
+
+
+
+</div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+  <script defer src="https://stepik.azureedge.net/static/frontend-build/vendor.js?v=1604946520"></script>
+  <script defer src="https://stepik.azureedge.net/static/frontend-build/stepic.js?v=1604946520"></script>
+
+  <script>
+UPLOADCARE_LOCALE = "en";
+UPLOADCARE_LIVE = false;
+UPLOADCARE_TABS = "file url dropbox facebook vk gdrive box skydrive instagram evernote";
+UPLOADCARE_AUTOSTORE = true;
+UPLOADCARE_PUBLIC_KEY = "e7a075ad8dc9e3a1ec61";
+UPLOADCARE_CDN_BASE = 'https://ucarecdn.com/';
+UPLOADCARE_MANUAL_START = true;
+
+</script>
+
+</body>
+</html>

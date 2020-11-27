@@ -1,0 +1,25 @@
+.box-1 {
+    height: 300px;
+    background-color: #e7f8f8;
+    color: black;
+  }
+  
+  .box-2 {
+    height: 500px;
+    background-color: #d4dff8;
+  }
+  
+  .box-3 {
+    height: 500px;
+    background-color: #d4f7f7;
+  }
+  
+  .box-4 {
+    height: 150px;
+    background-color: #e7f8f8;
+    padding-top: 30px;
+  }
+  .box-5 {
+    height: 100px;
+    background-color: #e7f8f8;
+    padding-top: 40px;
